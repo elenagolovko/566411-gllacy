@@ -24,7 +24,11 @@
   				<li><a href="about-us.html">О Компании</a></li>
   			</ul>
   			<ul class = "user-navigation">
-  				<li><button class = "search"></button></li>
+  				<li>
+  					<form action="/echo" method="get">
+                		<input type = "search" name = "search" placeholder = "Что ищем?">
+            		</form> 
+  				</li>
   				<li class = "login-link">Вход</li>
   				<li class = "cart-link"><a href="#">Пусто</a></li>
   			</ul>
@@ -131,7 +135,9 @@
   			<section class = "mailing">
   				<h2 class = "visually-hidden">Подписка на рассылку</h2>
   				<p>Подпишитесь на нашу сладкую рассылку и будете всегда в курсе всего самого вкусного, что у нас происходит. Обещаем не спамить и не слать всякой ненужной ерунды. Честно =)</p>
-  				<!--Здесь будет форма-->
+  				<form action="/echo" method="get">
+                		<input type = "email" name = "email" required>
+            	</form> 
   			</section>
   		</div>
   		<section class = "map">
@@ -141,7 +147,7 @@
   				<b>ул.Большая Конюшенная 19/8, Санкт-Петербург</b>
   				<p>
   					Для заказов по телефону:
-  					<!--ссылка стипом тел--><b>8 812 450-25-25</b>
+  					<!--Гугл на запрос о том, как сделать номер телефона кликабельным выдает только способ с <a href="tel:телефон">телефон(или позвонить)</a>--><b>8 812 450-25-25</b>
   					(с 10 до 20 ежедневно)
   				</p>
   				<a href="#"><span class = "button">Форма обратной связи</span></a>
@@ -183,7 +189,11 @@
   	</footer>
   	<section class = "modal modal-login">
   		<h2 class = "visually-hidden">Форма входа</h2>
-  	<!--Здесь тоже будет форма-->
+  		<form action="/echo" method="get">
+            <input type = "email" name = "email" value = "Электронная почта" required>
+            <input type = "password" name = "password" value = "Пароль" required>
+            <input type = "submit" value = "Войти">
+        </form> 
   	<div class = "help">
   		<p><a href="#">Забыли пароль?</a></p>
   		<p><a href="#">Новая регистрация</a></p>
@@ -192,7 +202,11 @@
   	<section >
   		<h2>Мы обязательно вам ответим!</h2>
   		<button value = "close"></button>
-  		<!--Здесь тоже будет форма-->
+  		<form action="/echo" method="get">
+            <input type = "text" name = "name" value = "Как вас зовут?">
+            <input type = "email" name = "email" value = "Ваша почта для ответа?" required>
+            <textarea placeholder = "Напишите что-нибудь..."></textarea>
+        </form> 
   	</section>
   </body>
 </html>
