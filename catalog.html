@@ -26,11 +26,13 @@
   				<li><a href="about-us.html">О Компании</a></li>
   			</ul>
   			<ul class = "user-navigation">
-  				<li><button class = "search"></button></li>
-  				<li class = "login-link">Вход</li>
-  				<li class = "user-cart">
-  					<a href="#">2 товара</a>
+  				<li>
+  					<form action="/echo" method="get">
+                		<input type = "search" name = "search" placeholder = "Что ищем?">
+            		</form> 
   				</li>
+  				<li class = "cart-link"><a href="#">2 товара</a></li>
+  				<li class = "login-link">Вход</li>
   			</ul>
   		</nav>
   		<section class = "header-contacts">
@@ -48,7 +50,44 @@
   		<h1>Сливочное мороженое</h1>
   		<section class = "filters">
     		<h2 class = "visually-hidden">Фильтр товаров</h2>
-    		<!--Здесь будет форма-->  
+    		<form action="/echo" method="get">
+
+    			<p>Сортировка:</p><br>
+            	<select class = "selection parameters">
+            		<option value = "popularity">по популярности</option>
+            		<option value = "cheap-first">сначала недорогие</option>
+            		<option value = "expensive-first">сначала дорогие</option>
+            		<option value = "fat-content">по жирности</option>
+            	</select>
+
+            	<p>Цена: 100 руб. - 500 руб.</p>
+            	<input type="range" name="price" min ="1" max ="9">
+
+
+            	<p>Жирность:</p>
+            	<input type="radio" name="fat-content" id = "none">
+            	<label for = "none">0%</label>
+            	<input type="radio" name="fat-content" id = "lower-10" checked>
+            	<label for = "lower-10">до 10%</label>
+            	<input type="radio" name="fat-content" id = "lower-30">
+            	<label for = "lower-30">до 30%</label>
+            	<input type="radio" name="fat-content" id = "higher-30">
+            	<label for = "higher-30">выше 30%</label>
+
+            	<p>Наполнители:</p>
+            	<input type="checkbox" name="choco" id = "choco" checked>
+            	<label for = "choco">шоколадные</label>
+            	<input type="checkbox" name="sweet" id = "sweet" checked>
+            	<label for = "sweet">сахарные присыпки</label>
+            	<input type="checkbox" name="fruits" id = "fruits">
+            	<label for = "fruits">фрукты</label>
+            	<input type="checkbox" name="sirops" id = "sirops">
+            	<label for = "sirops">сиропы</label>
+            	<input type="checkbox" name="jam" id = "jam">
+            	<label for = "jam">джемы</label>
+
+            	<input type="submit" name="button" value = "Применить">
+        	</form>   
     	</section>
 
     	<ul class = "catalog-list">
@@ -223,7 +262,11 @@
   	</footer>
   	<section class = "modal modal-login">
   		<h2 class = "visually-hidden">Форма входа</h2>
-  		<!--Здесь тоже будет форма-->
+  		<form action="/echo" method="get">
+            <input type = "email" name = "email" value = "Электронная почта" required>
+            <input type = "password" name = "password" value = "Пароль" required>
+            <input type = "submit" value = "Войти">
+        </form> 
   		<div class = "help">
   			<p><a href="#">Забыли пароль?</a></p>
   			<p><a href="#">Новая регистрация</a></p>
