@@ -27,12 +27,22 @@
   			</ul>
   			<ul class = "user-navigation">
   				<li>
+  					<img src="img/loupe.svg" width="17" height="17" alt="лупа">
   					<form action="/echo" method="get">
                 		<input type = "search" name = "search" placeholder = "Что ищем?">
             		</form> 
   				</li>
-  				<li class = "cart-link"><a href="#">2 товара</a></li>
-  				<li class = "login-link">Вход</li>
+  				<li class = "login-link">
+  					<img src="img/entrance.svg" width="21" height="19" alt="иконка входа">
+  					<span>Вход</span>
+  				</li>
+  				<li class = "cart-link">
+  					<a href="#">
+  						<!--<img src="img/basket.svg" width="21" height="20" alt="иконка корзинки">-->
+  						<img src="img/basket-red.svg" width="21" height="20" alt="иконка корзинки2">
+  						<span>2 товара</span>
+  					</a>
+  				</li>
   			</ul>
   		</nav>
   		<section class = "header-contacts">
@@ -59,33 +69,48 @@
             		<option value = "expensive-first">сначала дорогие</option>
             		<option value = "fat-content">по жирности</option>
             	</select>
-
+            	<img src="img/select-arrow.svg" width="11" height="10" alt="выбор">
             	<p>Цена: 100 руб. - 500 руб.</p>
             	<input type="range" name="price" min ="1" max ="9">
 
-
             	<p>Жирность:</p>
+            	<img src="img/radio-off.svg" width="22" height="22" alt="не выбрано">
             	<input type="radio" name="fat-content" id = "none">
             	<label for = "none">0%</label>
+
+            	<img src="img/radio-on.svg" width="22" height="22" alt="не выбрано">
             	<input type="radio" name="fat-content" id = "lower-10" checked>
             	<label for = "lower-10">до 10%</label>
+
+            	<img src="img/radio-off.svg" width="22" height="22" alt="не выбрано">
             	<input type="radio" name="fat-content" id = "lower-30">
             	<label for = "lower-30">до 30%</label>
+
+            	<img src="img/radio-off.svg" width="22" height="22" alt="не выбрано">
             	<input type="radio" name="fat-content" id = "higher-30">
             	<label for = "higher-30">выше 30%</label>
 
             	<p>Наполнители:</p>
+            	<img src="img/checkbox-on.svg" width="24" height="20" alt="выбран">
             	<input type="checkbox" name="choco" id = "choco" checked>
             	<label for = "choco">шоколадные</label>
+            	
+            	<img src="img/checkbox-on.svg" width="24" height="20" alt="выбран">
             	<input type="checkbox" name="sweet" id = "sweet" checked>
             	<label for = "sweet">сахарные присыпки</label>
+
+            	<img src="img/checkbox-off.svg" width="20" height="20" alt="не выбран">
             	<input type="checkbox" name="fruits" id = "fruits">
             	<label for = "fruits">фрукты</label>
+
+            	<img src="img/checkbox-off.svg" width="20" height="20" alt="не выбран">
             	<input type="checkbox" name="sirops" id = "sirops">
             	<label for = "sirops">сиропы</label>
+            	
+				<img src="img/checkbox-off.svg" width="20" height="20" alt="не выбран">
             	<input type="checkbox" name="jam" id = "jam">
             	<label for = "jam">джемы</label>
-
+            	
             	<input type="submit" name="button" value = "Применить">
         	</form>   
     	</section>
@@ -94,8 +119,8 @@
     		<li class = "catalog-item">
     			<article>
   						<h2 class = "visually-hidden">Продукт</h2>
-  						<img src="img/item-1.jpg" width = "600" height = "600" alt = "Сливочное с апельсиновым джемом и цитрусовой стружкой">
-  						<span class = "price">310 руб</span>
+  						<img src="img/item-1.jpg" width = "267" height = "267" alt = "Сливочное с апельсиновым джемом и цитрусовой стружкой">
+  						<span class = "price">310 <img src="img/ruble.svg" width="26" height="31" alt="руб"></span>
   						<span class = "weight">/кг</span>
   						<a href="#"><p>Быстрый просмотр</p></a>
   						<a href="catalog.html"><p>Сливочное с апельсиновым джемом и цитрусовой стружкой</p></a>
@@ -104,8 +129,8 @@
   			<li class = "item">
   				<article>
   						<h2 class = "visually-hidden">Продукт</h2>
-  						<img src="img/item-2.jpg" width = "600" height = "600" alt = "Сливочно-кофейное с кусочками шоколада">
-  						<span class = "price">380 руб</span>
+  						<img src="img/item-2.jpg" width = "267" height = "267" alt = "Сливочно-кофейное с кусочками шоколада">
+  						<span class = "price">380 <img src="img/ruble.svg" width="26" height="31" alt="руб"></span>
   						<span class = "weight">/кг</span>
   						<a href="#"><p>Быстрый просмотр</p></a>
   						<a href="catalog.html"><p>Сливочно-кофейное с кусочками шоколада</p></a>
@@ -114,8 +139,8 @@
   			<li class = "item">
   					<article>
   						<h2 class = "visually-hidden">Продукт</h2>
-  						<img src="img/item-3.jpg" width = "600" height = "600" alt = "Сливочно-клубничное с присыпкой из белого шоколада">
-  						<span class = "price">355 руб</span>
+  						<img src="img/item-3.jpg" width = "267" height = "267" alt = "Сливочно-клубничное с присыпкой из белого шоколада">
+  						<span class = "price">355 <img src="img/ruble.svg" width="26" height="31" alt="руб"></span>
   						<span class = "weight">/кг</span>
   						<a href="#"><p>Быстрый просмотр</p></a>
   						<a href="catalog.html"><p>Сливочно-клубничное с присыпкой из белого шоколада</p></a>
@@ -124,8 +149,8 @@
   			<li class = "item">
   					<article>
   						<h2 class = "visually-hidden">Продукт</h2>
-  						<img src="img/item-4.jpg" width = "600" height = "600" alt = "Сливочное крем-брюле с карамельной подливкой">
-  						<span>415 руб</span>
+  						<img src="img/item-4.jpg" width = "267" height = "267" alt = "Сливочное крем-брюле с карамельной подливкой">
+  						<span>415 <img src="img/ruble.svg" width="26" height="31" alt="руб"></span>
   						<span class = "weight">/кг</span>
   						<a href="#"><p>Быстрый просмотр</p></a>
   						<a href="catalog.html"><p>Сливочное крем-брюле с карамельной подливкой</p></a>
@@ -134,8 +159,8 @@
   			<li class = "item">
   				<article>
   					<h2 class = "visually-hidden">Продукт</h2>
-  					<img src="img/item-5.jpg" width = "600" height = "600" alt = "Сливочное с брусничным джемом">
-  					<span>325 руб</span>
+  					<img src="img/item-5.png" width = "267" height = "267" alt = "Сливочное с брусничным джемом">
+  					<span>325 <img src="img/ruble.svg" width="26" height="31" alt="руб"></span>
   					<span class = "weight">/кг</span>
   					<a href="#"><p>Быстрый просмотр</p></a>
   					<a href="#"><p>Сливочное с брусничным джемом</p></a>
@@ -144,8 +169,8 @@
   			<li class = "item">
   				<article>
   					<h2 class = "visually-hidden">Продукт</h2>
-  					<img src="img/item-6.jpg" width = "600" height = "600" alt = "Сливочно-черничное с цельными ягодами черники">
-  					<span>410 руб</span>
+  					<img src="img/item-6.png" width = "267" height = "267" alt = "Сливочно-черничное с цельными ягодами черники">
+  					<span>410 <img src="img/ruble.svg" width="26" height="31" alt="руб"></span>
   					<span class = "weight">/кг</span>
   					<a href="#"><p>Быстрый просмотр</p></a>
   					<a href="#"><p>Сливочно-черничное с цельными ягодами черники</p></a>
@@ -154,8 +179,8 @@
   			<li class = "item">
   				<article>
   					<h2 class = "visually-hidden">Продукт</h2>
-  					<img src="img/item-7.jpg" width = "600" height = "600" alt = "Сливочно-лимонное с карамельной присыпкой">
-  					<span>375 руб</span>
+  					<img src="img/item-7.png" width = "267" height = "267" alt = "Сливочно-лимонное с карамельной присыпкой">
+  					<span>375 <img src="img/ruble.svg" width="26" height="31" alt="руб"></span>
   					<span class = "weight">/кг</span>
   					<a href="#"><p>Быстрый просмотр</p></a>
   					<a href="#"><p>Сливочно-лимонное с карамельной присыпкой</p></a>
@@ -164,8 +189,8 @@
   			<li class = "item">
   				<article>
   					<h2 class = "visually-hidden">Продукт</h2>
-  					<img src="img/item-8.jpg" width = "600" height = "600" alt = "Сливочное с шоколадной стружкой">
-  					<span>320 руб</span>
+  					<img src="img/item-8.png" width = "267" height = "267" alt = "Сливочное с шоколадной стружкой">
+  					<span>320 <img src="img/ruble.svg" width="26" height="31" alt="руб"></span>
   					<span class = "weight">/кг</span>
   					<a href="#"><p>Быстрый просмотр</p></a>
   					<a href="#"><p>Сливочное с шоколадной стружкой</p></a>
@@ -174,8 +199,8 @@
   			<li class = "item">
   				<article>
   					<h2 class = "visually-hidden">Продукт</h2>
-  					<img src="img/item-9.jpg" width = "600" height = "600" alt = "Сливочно-ванильное с кусочками шоколада">
-  					<span>440 руб</span>
+  					<img src="img/item-9.png" width = "267" height = "267" alt = "Сливочно-ванильное с кусочками шоколада">
+  					<span>440 <img src="img/ruble.svg" width="26" height="31" alt="руб"></span>
   					<span class = "weight">/кг</span>
   					<a href="#"><p>Быстрый просмотр</p></a>
   					<a href="#"><p>Сливочно-ванильное с кусочками шоколада</p></a>
@@ -184,8 +209,8 @@
   			<li class = "item">
   				<article>
   					<h2 class = "visually-hidden">Продукт</h2>
-  					<img src="img/item-10.jpg" width = "600" height = "600" alt = "Сливочное с ментоловым сиропом">
-  					<span>435 руб</span>
+  					<img src="img/item-10.png" width = "267" height = "267" alt = "Сливочное с ментоловым сиропом">
+  					<span>435 <img src="img/ruble.svg" width="26" height="31" alt="руб"></span>
   					<span class = "weight">/кг</span>
   					<a href="#"><p>Быстрый просмотр</p></a>
   					<a href="#"><p>Сливочное с ментоловым сиропом</p></a>
@@ -194,8 +219,8 @@
   			<li class = "item">
   				<article>
   					<h2 class = "visually-hidden">Продукт</h2>
-  					<img src="img/item-11.jpg" width = "600" height = "600" alt = "Сливочное с кусочками черного шоколада">
-  					<span>355 руб</span>
+  					<img src="img/item-11.png" width = "267" height = "267" alt = "Сливочное с кусочками черного шоколада">
+  					<span>355 <img src="img/ruble.svg" width="26" height="31" alt="руб"></span>
   					<span class = "weight">/кг</span>
   					<a href="#"><p>Быстрый просмотр</p></a>
   					<a href="#"><p>Сливочное с кусочками черного шоколада</p></a>
@@ -204,8 +229,8 @@
   			<li class = "item">
   				<article>
   					<h2 class = "visually-hidden">Продукт</h2>
-  					<img src="img/item-12.jpg" width = "600" height = "600" alt = "Сливочное с мятным сиропом">
-  					<span>420 руб</span>
+  					<img src="img/item-12.png" width = "267" height = "267" alt = "Сливочное с мятным сиропом">
+  					<span>420 <img src="img/ruble.svg" width="26" height="31" alt="руб"></span>
   					<span class = "weight">/кг</span>
   					<a href="#"><p>Быстрый просмотр</p></a>
   					<a href="#"><p>Сливочное с мятным сиропом</p></a>
@@ -223,6 +248,7 @@
     			<li class = "pagination-item"><a href="#">4</a></li>
     			<li class = "pagination-item"><a href="#">5</a></li>
     		</ul>
+    		<img src="img/icon-right-small.svg" width="8" height="12" alt="вперёд">
   		</section>
   		
 
@@ -232,22 +258,35 @@
   			<h2 class = "visually-hidden">Мы в социальных сетях</h2>
   			<ul>
   				<li>
-  					<a class = "social-button" href="#">Твиттер</a>
+  					<a class = "social-button" href="#">
+  					<img src="img/twitter.svg" width="32" height="32" alt="Твиттер">
+  					<span>Твиттер</span>
+  					</a>
   				</li>
   				<li>
-  					<a class = "social-button" href="#">Инстаграм</a>
+  					<a class = "social-button" href="#">
+  					<img src="img/instagram.svg" width="32" height="32" alt="Инстаграм">
+  					<span>Инстаграм</span>
+  					</a>
   				</li>
   				<li>
-  					<a class = "social-button" href="#">Фейсбук</a>
+  					<a class = "social-button" href="#">
+  						<img src="img/fb.svg" width="32" height="32" alt="Фейсбук">
+  					<span>Фейсбук</span>
+  					</a>
   				</li>
   				<li>
-  					<a class = "social-button" href="#">ВКонтакте</a>
+  					<a class = "social-button" href="#">
+  					<img src="img/vk.svg" width="32" height="32" alt="ВКонтакте">
+  					<span>ВКонтакте</span>
+  					</a>
   				</li>
   			</ul>
   		</section>
   		<section class = "info">
   			<h2 class = "visually-hidden">Информация о нас</h2>
   				<p>
+  					<img src="img/heart.svg" width="15" height="13" alt="Сердечко">
   					<a href="#">Для поставщиков</a>
   					<a href="#">О производстве</a>
   					<a href="#">Наши документы</a>
@@ -256,7 +295,7 @@
   		</section> 		
   		<section class = "footer-copyright">
   			<h2 class = "visually-hidden">Кем изготовлено</h2>
-      		<img src="img/htmlacademy.svg" width = "108" height = "38" alt = "html academy">
+      		<img src="img/logo-htmlacademy.svg" width = "108" height = "38" alt = "html academy">
       		<p>Сделано в HTML Academy © 2017</p>
     	</section>
   	</footer>
@@ -276,22 +315,22 @@
   		<h2 class = "visually-hidden">Ваш заказ</h2>
   		<table>
   			<tr>
-  				<td><button value = "close"></button></td>
+  				<td><button value = "close"><img src="img/cross-small.svg" width="11" height="11" alt="Другой крестик"></button></td>
   				<td><img src="img/item-1.jpg" width = "33" height = "33" alt = "Мороженко 1"></td>
   				<td>Пломбир с апельсиновым джемом</td>
-  				<td>1,5 кг х <span> 200 руб.</span></td>
-  				<td>300 руб.</td>
+  				<td>1,5 кг х <span> 200 <img src="img/ruble.svg" width="26" height="31" alt="руб">.</span></td>
+  				<td>300 <img src="img/ruble.svg" width="26" height="31" alt="руб">.</td>
   			</tr>
   			<tr>
-  				<td><button value = "close"></button></td>
+  				<td><button value = "close"><img src="img/cross-small.svg" width="11" height="11" alt="Другой крестик"></button></td>
   				<td><img src="img/item-2.jpg" width = "33" height = "33" alt = "Мороженко 2"></td>
   				<td>Клубничный пломбир с присыпкой из белого шоколада</td>
-  				<td>1,5 кг х <span> 300 руб.</span></td>
-  				<td>450 руб.</td>
+  				<td>1,5 кг х <span> 300 <img src="img/ruble.svg" width="26" height="31" alt="руб">.</span></td>
+  				<td>450 <img src="img/ruble.svg" width="26" height="31" alt="руб">.</td>
   			</tr>
   			<tr>
   				<td colspan = "5">
-  					<b>Итого: 750 руб.</b>
+  					<b>Итого: 750 <img src="img/ruble.svg" width="26" height="31" alt="руб">.</b>
   					<button>Оформить заказ</button>
   				</td>
   			</tr>
