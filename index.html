@@ -23,8 +23,9 @@
         </ul>
         <ul class="user-navigation">
           <li>
-            <form action="/echo" method="get">
-              <input type = "search" name = "search" placeholder = "Что ищем?">
+            <form action="https://echo.htmlacademy.ru" method="post">
+              <label class="visually-hidden" for="nav-search">Поиск:</label>
+              <input type = "search" id="nav-search"name = "search" placeholder = "Что ищем?">
             </form>
           </li>
           <li class="login-link"><a href="#">Вход</a></li>
@@ -122,16 +123,17 @@
         <section class="mailing">
           <h2 class="visually-hidden">Подписка на рассылку</h2>
           <p>Подпишитесь на нашу сладкую рассылку и будете всегда в курсе всего самого вкусного, что у нас происходит. Обещаем не спамить и не слать всякой ненужной ерунды. Честно =)</p>
-          <form action="/echo" method="get">
-            <input type = "email" name = "email" required>
-            <input type="submit" value="Отправить">
+          <form  action="https://echo.htmlacademy.ru" method="post">
+            <label class="visually-hidden" for="mailing-email">Адрес Вашей почты для подписки</label>
+            <input type = "email" id="mailing-email" name = "email" required>
+            <button class="button" type="submit">Отправить</button>
           </form>
         </section>
       </div>
       <section class="map">
         <h2 class="visually-hidden">Мы на карте</h2>
         <section class="contacts">
-          <img src="img/map.png" width="1200" height="640" alt="Карта">
+          <img src="img/map.jpg" width="1200" height="640" alt="Адрес главного офиса и офлайн магазина:ул.Большая Конюшенная 19/8, Санкт-Петербург">
           <h2>Адрес главного офиса и офлайн магазина:</h2>
           <b>ул.Большая Конюшенная 19/8, Санкт-Петербург</b>
           <p>Для заказов по телефону:<a href="tel:+78124502525"><b>8 812 450-25-25</b></a>(с 10 до 20 ежедневно)</p>
@@ -160,10 +162,12 @@
     </footer>
     <section class="modal modal-login">
       <h2 class="visually-hidden">Форма входа</h2>
-      <form action="/echo" method="get">
-        <input type = "email" name = "email" value = "Электронная почта" required>
-        <input type = "password" name = "password" value = "Пароль" required>
-        <input type = "submit" value = "Войти">
+      <form class="login-form" action="https://echo.htmlacademy.ru" method="post">
+        <label class="visually-hidden" for="login-form-email">Ваша электронная почта</label>
+        <input type = "email" name = "email" id="login-form-email" value = "Электронная почта" required>
+        <label class="visually-hidden" for="login-form-password">Ваш пароль</label>
+        <input type = "password" name = "password" id="login-form-password" value = "Пароль" required>
+        <button class="button" type="submit">Войти</button>
       </form>
     <div class="help">
       <p><a href="#">Забыли пароль?</a></p>
@@ -172,11 +176,14 @@
     </section>
     <section>
       <h2>Мы обязательно вам ответим!</h2>
-      <button value = "close"></button>
-      <form action="/echo" method="get">
-        <input type = "text" name = "name" value = "Как вас зовут?">
-        <input type = "email" name = "email" value = "Ваша почта для ответа?" required>
-        <textarea placeholder = "Напишите что-нибудь..."></textarea>
+      <button class="button" value = "close">Закрыть</button>
+      <form class="answer-us" action="https://echo.htmlacademy.ru" method="post">
+        <label class="visually-hidden" for="answer-username">Ваше имя</label>
+        <input type = "text" id="answer-username" name = "name" value = "Как вас зовут?">
+        <label class="visually-hidden" for="answer-email">Ваша почта</label>
+        <input type = "email" id="answer-email" name = "email" value = "Ваша почта для ответа?" required>
+        <label class="visually-hidden" for="answer-comment">Текст ответа</label>
+        <textarea name="comment" id="answer-comment" placeholder = "Напишите что-нибудь..."></textarea>
       </form>
     </section>
   </body>

@@ -23,8 +23,9 @@
       </ul>
       <ul class="user-navigation">
         <li>
-          <form action="/echo" method="get">
-            <input type = "search" name = "search" placeholder = "Что ищем?">
+          <form action="https://echo.htmlacademy.ru" method="post">
+            <label class="visually-hidden" for="nav-search">Поиск</label>
+            <input type = "search" id="nav-search"name = "search" placeholder = "Что ищем?">
           </form>
         </li>
         <li class="login-link"><a href="#">Вход</a></li>
@@ -46,35 +47,47 @@
     <h1>Сливочное мороженое</h1>
     <section class="filters">
       <h2 class="visually-hidden">Фильтр товаров</h2>
-      <form action="/echo" method="get">
+      <form class="filter" action="https://echo.htmlacademy.ru" method="post">
         <fieldset>
           <legend>Сортировка:</legend>
-          <select class="selection parameters"><!--datalist-->
+          <label class="visually-hidden" for="selection-parameters">Параметры сортировки</label>
+          <select class="selection-parameters" id="selection-parameters">
             <option value = "popularity">по популярности</option>
             <option value = "cheap-first">сначала недорогие</option>
             <option value = "expensive-first">сначала дорогие</option>
             <option value = "fat-content">по жирности</option>
           </select>
+          <!--а можно так?
+          <input list="selection-parametrs">
+          <datalist id="selection-parametrs">
+            <option value="по популярности">
+            <option value="сначала недорогие">
+            <option value="сначала дорогие">
+            <option value="по жирности">
+          </datalist>
+          -->
         </fieldset>
         <fieldset>
           <legend>Цена: 100 руб. - 500 руб.</legend>
-          <input type="range" name="price" min ="1" max ="9">
+          <!--2 ручки? range не подойдет?-->
+          <label class="visually-hidden" for="price">Ползунок для выбора цены</label>
+          <input type="range" id="price" name="price" min ="1" max ="9">
         </fieldset>
         <fieldset>
-          <legend>Жирность:</legend><!--ручка? рэньдж не подойдет?-->
-          <label><input type="radio" name="fat-content" id = "none">0%</label>
-          <label><input type="radio" name="fat-content" id = "lower-10" checked>до 10%</label>
-          <label><input type="radio" name="fat-content" id = "lower-30">до 30%</label>
-          <label><input type="radio" name="fat-content" id = "higher-30">выше 30%</label>
+          <legend>Жирность:</legend>
+          <label><input class="visually-hidden" type="radio" name="fat-content" id = "none">0%</label>
+          <label><input class="visually-hidden" type="radio" name="fat-content" id = "lower-10" checked>до 10%</label>
+          <label><input class="visually-hidden" type="radio" name="fat-content" id = "lower-30">до 30%</label>
+          <label><input class="visually-hidden" type="radio" name="fat-content" id = "higher-30">выше 30%</label>
         </fieldset>
         <fieldset>
           <legend>Наполнители:</legend>
-          <label><input type="checkbox" name="choco" id = "choco" checked>шоколадные</label>
-          <label> <input type="checkbox" name="sweet" id = "sweet" checked>сахарные присыпки</label>
-          <label><input type="checkbox" name="fruits" id = "fruits">фрукты</label>
-          <label><input type="checkbox" name="sirops" id = "sirops">сиропы</label>
-          <label><input type="checkbox" name="jam" id = "jam">джемы</label>
-          <input type="submit" name="button" value = "Применить">
+          <label><input class="visually-hidden" type="checkbox" name="choco" id = "choco" checked>шоколадные</label>
+          <label> <input class="visually-hidden" type="checkbox" name="sweet" id = "sweet" checked>сахарные присыпки</label>
+          <label><input class="visually-hidden" type="checkbox" name="fruits" id = "fruits">фрукты</label>
+          <label><input class="visually-hidden" type="checkbox" name="sirops" id = "sirops">сиропы</label>
+          <label><input class="visually-hidden" type="checkbox" name="jam" id = "jam">джемы</label>
+          <button type="submit">Применить</button>
         </fieldset>
       </form>
     </section>
@@ -234,10 +247,10 @@
   </footer>
   <section class="modal modal-login">
     <h2 class="visually-hidden">Форма входа</h2>
-    <form action="/echo" method="get">
-      <input type = "email" name = "email" value = "Электронная почта" required>
-      <input type = "password" name = "password" value = "Пароль" required>
-      <input type = "submit" value = "Войти">
+    <form class="login-form" action="https://echo.htmlacademy.ru" method="post">
+      <label><input type = "email" name = "email" value = "Электронная почта" required>Ваша электронная почта</label>
+      <label><input type = "password" name = "password" value = "Пароль" required>Ваш пароль</label>
+      <button class="button" type="submit">Войти</button>
     </form>
     <div class="help">
       <p><a href="#">Забыли пароль?</a></p>
@@ -248,14 +261,14 @@
     <h2 class="visually-hidden">Ваш заказ</h2>
     <table>
       <tr>
-        <td><button value = "close"><img src="img/cross-small.svg" width="11" height="11" alt="Другой крестик"></button></td>
+        <td><button value = "close"><!--Здесь будет код svg--><img src="img/cross-small.svg" width="11" height="11" alt="Убрать из корзины"></button></td>
         <td><img src="img/item-1.jpg" width = "33" height = "33" alt = "Мороженко 1"></td>
         <td>Пломбир с апельсиновым джемом</td>
         <td>1,5 кг х <span> 200 руб.</span></td>
         <td>300 руб.</td>
       </tr>
       <tr>
-        <td><button value = "close"><img src="img/cross-small.svg" width="11" height="11" alt="Другой крестик"></button></td>
+        <td><button value = "close"><!--Здесь будет код svg--><img src="img/cross-small.svg" width="11" height="11" alt="Убрать из козины"></button></td>
         <td><img src="img/item-3.jpg" width = "33" height = "33" alt = "Мороженко 2"></td>
         <td>Клубничный пломбир с присыпкой из белого шоколада</td>
         <td>1,5 кг х <span> 300 руб.</span></td>
