@@ -3,6 +3,9 @@
   <head>
     <meta charset="utf-8">
     <title>HTML Academy: Глейси</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&amp;subset=cyrillic" rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
     <header class="main-header">
@@ -12,7 +15,7 @@
           <li><a href="catalog.html">Каталог</a>
             <ul class="kind-of-item">
               <li><a href="new-items.html"><b>Новинки</b></a></li>
-              <li><a href="#">Сливочное</a></li>
+              <li><a href="catalog.html">Сливочное</a></li>
               <li><a href="#">Щербеты</a></li>
               <li><a href="#">Фруктовый лед</a></li>
               <li><a href="#">Мелорин</a></li>
@@ -40,6 +43,17 @@
     </header>
     <main class="container">
       <h1 class="page-title visually-hidden">Магазин Глейси</h1>
+      <ul class="slider-switches">
+        <li class="slider-switch current-slide">
+          <button class="slide-btn" type="button">Первый слайд</button>
+        </li>
+        <li class="slider-switch">
+          <button class="slide-btn" type="button">Второй слайд</button>
+        </li>
+        <li class="slider-switch">
+          <button class="slide-btn" type="button">Третий слайд</button>
+        </li>
+      </ul>
       <section class="slider">
         <h2 class="visually-hidden">Слайдеры с продуком</h2>
         <article class="index-1">
@@ -110,7 +124,7 @@
             <article>
               <h2 class="visually-hidden">Хит продаж</h2>
               <img src="img/item-4.jpg" width="267" height="267" alt="Сливочное крем-брюле с карамельной подливкой">
-              <span>415 <img src="img/ruble.svg" width="26" height="31" alt="руб"></span>
+              <span class="price">415 <img src="img/ruble.svg" width="26" height="31" alt="руб"></span>
               <span class="weight">/кг</span>
               <a href="#"><p>Быстрый просмотр</p></a>
               <a href="catalog.html"><h3>Сливочное крем-брюле с карамельной подливкой</h3></a>
@@ -149,7 +163,7 @@
           <h2>Адрес главного офиса и офлайн магазина:</h2>
           <b>ул.Большая Конюшенная 19/8, Санкт-Петербург</b>
           <p>Для заказов по телефону:<a href="tel:+78124502525"><b>8 812 450-25-25</b></a>(с 10 до 20 ежедневно)</p>
-          <a href="#">Форма обратной связи</a>
+          <a class="button" href="#">Форма обратной связи</a>
         </section>
       </section>
     </main>
@@ -186,10 +200,10 @@
       <p><a href="#">Новая регистрация</a></p>
     </div>
     </section>
-    <section>
+    <section class="write-to-us">
       <h2>Мы обязательно вам ответим!</h2>
-      <button class="button" type="button" value="close">Закрыть</button>
-      <form class="answer-us" action="https://echo.htmlacademy.ru" method="post">
+      <button type="button" value="close">Закрыть</button>
+      <form class="answer-us-form" action="https://echo.htmlacademy.ru" method="post">
         <label class="visually-hidden" for="answer-username">Ваше имя</label>
         <input type="text" id="answer-username" name="name" value="Как вас зовут?">
         <label class="visually-hidden" for="answer-email">Ваша почта</label>
