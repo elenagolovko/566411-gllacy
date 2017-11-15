@@ -25,6 +25,11 @@ body {
   overflow: hidden;
 }
 
+.round {
+  border-radius: 140px;
+  border: none;
+}
+
 .site-navigation {
   list-style: none;
 }
