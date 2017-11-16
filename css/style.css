@@ -483,6 +483,11 @@ h1 {
   border-radius: 5px;
 }
 
+.mailing input[type="email"]:hover,
+.mailing input[type="email"]:focus {
+  border: 2px solid #d3d3d2;
+}
+
 .contacts {
   background-color: #feffff;
 }
