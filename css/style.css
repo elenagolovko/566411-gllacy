@@ -14,6 +14,17 @@ body {
   */
 }
 
+.site-wrapper {
+  margin: 20px 27px;
+}
+
+.background-wrapper {
+  margin: 0 auto;
+  background-image: url("../img/background-index1.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -30,15 +41,25 @@ body {
   border: none;
 }
 
+.main-header {
+  width: 1200px;
+  margin: 0 auto;
+}
+
  .main-navigation,
  .header-container {
-  margin-top: 5px;
-  margin-left: 10px;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
  }
+
+.site-navigation {
+  width: 500px;
+}
+
+.user-navigation {
+  width: 267px;
+}
 
 .site-navigation,
 .user-navigation {
@@ -104,7 +125,10 @@ body {
 
 .site-navigation > li:hover .kind-of-item,
 .site-navigation > li > a:focus .kind-of-item {
-  /*При фокусе подменюшка не появляется*/
+  /*При фокусе подменюшка не появляется
+  дополнительная обертка с прозрачным
+   фоном на элемент навела мышкой он никуда не исчесзнет
+   вход и поиск тоже самое*/
   display: block;
 }
 
@@ -148,6 +172,7 @@ body {
 }
 
 .user-navigation a {
+  margin-left: 10px;
   color: #ffffff;
   font-size: 14px;
   font-weight: 500;
@@ -180,6 +205,18 @@ body {
 
 .slider-switches {
   list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.index-1 {
+  margin: 400px 270px 0 270px;
+}
+
+.index-1 .button {
+  display: inline-block;
+  padding: 15px 55px;
+  margin: 40px 200px;
 }
 
 /* и другие стили слайдера...*/
@@ -255,13 +292,26 @@ h1 {/*Картинка фон? Или текст поверх нее?*/
 .catalog-list ul,
 .bestsellers-list {
   display: flex;
-  justify-content: space-around;
+  flex-direction: row;
+  justify-content: flex-start;
   flex-wrap: wrap;
-  margin-top: 50px;
-  margin-bottom: 50px;
+  margin: 0;
+  padding: 0;
   list-style: none;
 }
 
+.bestsellers-wrap {
+  margin: 50px 13px;
+}
+
+.item {
+  width: 293px;
+}
+
+.item article {
+  padding: 0 13px;
+  text-align: center;
+}
 
 .item a {
   color: #ffffff;
@@ -350,10 +400,14 @@ h1 {/*Картинка фон? Или текст поверх нее?*/
   background-color: #ffffff;
 }
 
-.main-footer {
+.footer-container {
   display: flex;
-  justify-content: space-around;
-  margin-top: 30px;
+  justify-content: space-between;
+  margin-top: 34px;
+}
+
+.footer-social {
+  width: 267px;/*267 Сейчас маловат...*/
 }
 
 .footer-social  a {
@@ -376,6 +430,10 @@ h1 {/*Картинка фон? Или текст поверх нее?*/
   text-decoration: none;
 }
 
+.info {
+  width: 330px;
+}
+
 .info p {
   display: flex;
   width: 280px;
@@ -386,6 +444,10 @@ h1 {/*Картинка фон? Или текст поверх нее?*/
   font-weight: 700;
   line-height: 16px;
   text-align: center;
+}
+
+.footer-copyright {
+  width: 267px;
 }
 
 .footer-copyright a,
@@ -471,9 +533,14 @@ h1 {/*Картинка фон? Или текст поверх нее?*/
   color: #999999;
 }
 
+.index-1 {
+  width: 700px;
+}
+
 .index-1 h2,
 .index-2 h2,
 .index-3 h2 {
+  margin: 0;
   color: #ffffff;
   font-size: 60px;
   line-height: 60.35px;
@@ -485,13 +552,16 @@ h1 {/*Картинка фон? Или текст поверх нее?*/
   justify-content: space-between;
 
   list-style: none;
+  margin: 0;
+  padding: 0;
   color: #ffffff;
 }
 
 .raspberry .button,
 .chocolate .button {
+  display: inline-block;
   margin-top: 20px;
-}/*кнопки не хотят двигаться?...*/
+}
 
 .advertisement h2 {
   margin: 7px 10px;
@@ -527,17 +597,22 @@ h1 {/*Картинка фон? Или текст поверх нее?*/
 }
 
 .features {
-  height: 310px;/*лучше формировать с помощью падингов*/
+
 
   background-image: url("../img/background-feature.png");
   border-radius: 10px;
-}/*Как то отцентровать*/
+}
 
 .features ul {
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .features h2 {
+  display: inline-block;
+  margin-top: 30px;
+  margin-left: 20px;
   color: #323232;
   font-size: 24px;
   font-weight: 500;
@@ -546,8 +621,10 @@ h1 {/*Картинка фон? Или текст поверх нее?*/
 
 .layout-block {
   display: flex;
-  justify-content: space-around;
-  margin: 50px auto;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 45px;
+  margin-bottom: 37px;
 }
 
 .blog {

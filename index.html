@@ -8,11 +8,12 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
-    <header class="main-header">
-      <nav class="main-navigation">
-
+    <div class="background-wrapper">
+    <div class="site-wrapper">
+      <header class="main-header">
+        <nav class="main-navigation">
           <div class="header-container">
-        <img src="img/logo.svg" width="154" height="64" alt="Логотип GllacyShop">
+            <img src="img/logo.svg" width="154" height="64" alt="Логотип GllacyShop">
             <ul class="site-navigation">
               <li><a href="catalog.html">Каталог</a>
                 <ul class="kind-of-item">
@@ -26,26 +27,28 @@
               <li><a href="price.html">Доставка и оплата</a></li>
               <li><a href="about-us.html">О Компании</a></li>
             </ul>
-            </div>
-            <ul class="user-navigation">
-              <li>
-                <form class="search" action="https://echo.htmlacademy.ru" method="post">
-                  <label class="visually-hidden" for="nav-search">Поиск:</label>
-                  <input type="search" id="nav-search" name="search" placeholder="Что ищем?">
-                </form>
-              </li>
-              <li class="login-link"><a href="#">Вход</a></li>
-              <li class="cart-link"><a href="#"><span>Пусто</span></a></li>
-            </ul>
-      </nav>
-      <section class="header-contacts">
-        <h2 class="visually-hidden">Наши контакты</h2>
-        <p>с 10 до 20, ежедневно</p>
-        <a href="tel:+78124502525"><b>8 812 450-25-25</b></a>
-      </section>
-    </header>
-    <main class="container">
-      <h1 class="page-title visually-hidden">Магазин Глейси</h1>
+          </div>
+          <ul class="user-navigation">
+            <li>
+              <form class="search" action="https://echo.htmlacademy.ru" method="post">
+                <label class="visually-hidden" for="nav-search">Поиск:</label>
+                <input type="search" id="nav-search" name="search" placeholder="Что ищем?">
+              </form>
+            </li>
+            <li class="login-link"><a href="#">Вход</a></li>
+            <li class="cart-link"><a href="#"><span>Пусто</span></a></li>
+          </ul>
+        </nav>
+        <section class="header-contacts">
+          <h2 class="visually-hidden">Наши контакты</h2>
+          <p>с 10 до 20, ежедневно</p>
+          <a href="tel:+78124502525"><b>8 812 450-25-25</b></a>
+        </section>
+      </header>
+    </div>
+      <main class="container">
+        <div class="site-wrapper">
+          <h1 class="page-title visually-hidden">Магазин Глейси</h1>
       <!--<ul class="slider-switches">
         <li class="slider-switch current-slide">
           <button class="slide-btn" type="button">Первый слайд</button>
@@ -57,13 +60,12 @@
           <button class="slide-btn" type="button">Третий слайд</button>
         </li>
       </ul>-->
-      <section class="slider">
-        <h2 class="visually-hidden">Слайдеры с продуком</h2>
-        <article class="index-1">
-          <img class="background-index1" src="img/background-index1.png" width="1045" height="881" alt="Мороженки-фон">
-          <h2>Крем-брюле и пломбир с малиновым джемом</h2>
-          <a class="button" href="#">Давайте оба!</a>
-        </article>
+          <section class="slider">
+            <h2 class="visually-hidden">Слайдеры с продуком</h2>
+            <article class="index-1">
+              <h2>Крем-брюле и пломбир с малиновым джемом</h2>
+              <a class="button" href="#">Давайте оба!</a>
+            </article>
     <!--<article class="index-2">
           <img src="img/background-index2.png" width="1065" height="859" alt="Мороженки-фон">
           <h2>Шоколадный пломбир и лимонный сорбет</h2>
@@ -73,24 +75,26 @@
           <img src="img/background-index3.png" width="1079" height="854" alt="Мороженки-фон">
           <h2>Пломбир с помадкой и клубничный щербет</h2>
           <a class="button" href="#">Давайте оба!</a>
-        </article>
-      </section>
-      -->
-      <section class="advertisement">
-        <ul>
-          <li class="raspberry">
-            <h2>Малинка даром!</h2>
-            <p>При покупке 2 кг любого фруктового мороженного, добавим в ваш заказ банку малинового варенья бесплатно.</p>
-            <a class="button" href="#">Хочу варенье!</a>
-          </li>
-          <li class="chocolate">
-            <h2>Шоколадки даром!</h2>
-            <p>При покупке 2 кг пломбира, добавим в ваш заказ упаковку вкуснейшей шоколадной присыпки совершенно бесплатно.</p>
-            <a class="button" href="#">Хочу шоколадки!</a>
-          </li>
-        </ul>
-      </section>
-      <section class="bestsellers">
+        </article>-->
+          </section>
+
+        <section class="advertisement">
+          <ul>
+            <li class="raspberry">
+              <h2>Малинка даром!</h2>
+              <p>При покупке 2 кг любого фруктового мороженного, добавим в ваш заказ банку малинового варенья бесплатно.</p>
+              <a class="button" href="#">Хочу варенье!</a>
+            </li>
+            <li class="chocolate">
+              <h2>Шоколадки даром!</h2>
+              <p>При покупке 2 кг пломбира, добавим в ваш заказ упаковку вкуснейшей шоколадной присыпки совершенно бесплатно.</p>
+              <a class="button" href="#">Хочу шоколадки!</a>
+            </li>
+          </ul>
+        </section>
+      </div>
+      <div class="bestsellers-wrap">
+        <section class="bestsellers">
         <h2 class="visually-hidden">Хиты продаж</h2>
         <ul class="bestsellers-list">
           <li class="item">
@@ -135,6 +139,8 @@
           </li>
         </ul>
       </section>
+      </div>
+      <div class="site-wrapper">
       <section class="features">
         <h2>Магазин Глейси - это онлайн и офлайн магазин по продаже мороженного собственного производства на развес </h2>
         <ul>
@@ -159,6 +165,7 @@
           </form>
         </section>
       </div>
+    </div>
       <section class="map">
         <h2 class="visually-hidden">Мы на карте</h2>
         <section class="contacts">
@@ -170,9 +177,11 @@
         </section>
       </section>
     </main>
+    <div class="site-wrapper">
     <footer class="main-footer">
-      <section class="footer-social">
-        <h2 class="visually-hidden">Мы в социальных сетях</h2>
+      <div class="footer-container">
+        <section class="footer-social">
+          <h2 class="visually-hidden">Мы в социальных сетях</h2>
         <ul>
           <li><a class="social-button" href="#"><span>Твиттер</span></a></li>
           <li><a class="social-button" href="#"><span>Инстаграм</span></a></li>
@@ -188,6 +197,7 @@
         <h2 class="visually-hidden">Кем изготовлено</h2>
         <p>Сделано в <a href="https://htmlacademy.ru">HTML Academy</a> © 2017</p>
       </section>
+      </div>
     </footer>
     <!--<section class="modal modal-login">
       <h2 class="visually-hidden">Форма входа</h2>
@@ -216,5 +226,7 @@
         <button class="button" type="submit">Отправить</button>
       </form>
     </section>-->
+      </div>
+    </div>
   </body>
 </html>
