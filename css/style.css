@@ -30,18 +30,47 @@ body {
   border: none;
 }
 
-.site-navigation {
+ .main-navigation,
+ .header-container {
+  margin-top: 5px;
+  margin-left: 10px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+ }
+
+.site-navigation,
+.user-navigation {
+  display: flex;
+  margin: 0;
+  padding: 0;
   list-style: none;
 }
 
 .site-navigation a {
+  margin-right: 15px;
   color: #ffffff;
   font-weight: 700;
   line-height: 18px;
 }
 
-.site-navigation a:hover,
-.site-navigation a:focus {
+.site-navigation > .current > a {
+  padding: 5px 15px;
+  border-radius: 60px;
+
+  color: #ffffff;
+  text-decoration: none;
+
+  background-color: #d07058;
+}
+
+.site-navigation > li > a:hover,
+.site-navigation > li > a:focus {
+  display: block;
+  padding: 5px 15px;
+  border-radius: 60px;
+
   color: #333333;
   text-decoration: none;
 
@@ -52,15 +81,31 @@ body {
   box-shadow: inset 0px 2px 1px #696969;
 }
 
-.site-navigation-current {
-  color: #ffffff;
-  text-decoration: none;
-
-  background-color: #d07058;
+.header-contacts {
+  float: right;
+  margin-right: 10px;
+  /*Это вообще законно?*/
 }
 
-.kind-of-item {
+.site-navigation > li {
+  position: relative;
+  margin-left: 15px;
+}
+
+.site-navigation .kind-of-item {
+  position: absolute;
+  display: none;
+  top: 30px;
+  left: 15px;
   list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site-navigation > li:hover .kind-of-item,
+.site-navigation > li > a:focus .kind-of-item {
+  /*При фокусе подменюшка не появляется*/
+  display: block;
 }
 
 .kind-of-item a {
@@ -73,6 +118,12 @@ body {
   background-color: #f8f7f4;
 }
 
+.kind-of-item-current a {
+  color: #000000;
+
+  background-color: #d07058;
+}
+
 .kind-of-item a:hover,
 .kind-of-item a:focus {
   background-color: #fbded7;
@@ -80,15 +131,6 @@ body {
 
 .kind-of-item a:active {
   background-color: #f6b5a5;
-}
-
-/*.kind-of-item-current {
-  color: #000000;
-
-  background-color: #d07058;
-}*/
-.user-navigation {
-  list-style: none;
 }
 
 .search input[type="search"]{
@@ -139,25 +181,41 @@ body {
 .slider-switches {
   list-style: none;
 }
+
 /* и другие стили слайдера...*/
 .breadcrumbs {
+  display: flex;
+  margin: 0;
+  padding: 0;
   list-style: none;
 }
 
 .breadcrumbs a {
+  margin-right: 5px;
   color: #ffffff;
   font-size: 14px;
   font-weight: 400;
   line-height: 16px;
 }
 
-h1 {
+h1 {/*Картинка фон? Или текст поверх нее?*/
+  margin: 0;
   color: #ffffff;
   font-size: 35px;
   line-height: 41px;
 }
 
+.filter {
+  display: flex;
+  margin-top: 30px;
+  width: 700px;
+  flex-wrap: wrap;
+}
+
 .filter fieldset {
+  padding: 0;
+  margin: 0;
+  margin-right: 10px;
   border: none;
 }
 
@@ -169,8 +227,11 @@ h1 {
 }
 
 .filter select,
-.filter label,
+.filter-mask,
 .filter button {
+  padding: 5px;
+  border-radius: 60px;
+
   color: #ffffff;
   line-height: 18px;
 
@@ -193,8 +254,14 @@ h1 {
 
 .catalog-list ul,
 .bestsellers-list {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 50px;
+  margin-bottom: 50px;
   list-style: none;
 }
+
 
 .item a {
   color: #ffffff;
@@ -217,6 +284,8 @@ h1 {
 
 .item:hover p {
   display: block;
+  padding: 5px 15px;
+  border-radius: 60px;
   width: 200px;
 
   font-weight: 700;
@@ -254,10 +323,15 @@ h1 {
 }
 
 .pagination-list {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0;
+  padding: 0;
   list-style: none;
 }
 
 .pagination-list a {
+  margin-right: 5px;
   text-decoration: none;
   color: #ffffff;
 }
@@ -276,13 +350,24 @@ h1 {
   background-color: #ffffff;
 }
 
+.main-footer {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
+}
+
 .footer-social  a {
+  margin-right: 5px;
+
   color: #ffffff;
   text-decoration: none;
   text-align: left;
 }
 
 .footer-social ul {
+  display: flex;
+  margin: 0;
+  padding: 0;
   list-style: none;
 }
 
@@ -292,6 +377,11 @@ h1 {
 }
 
 .info p {
+  display: flex;
+  width: 280px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
   font-size: 13px;
   font-weight: 700;
   line-height: 16px;
@@ -336,6 +426,9 @@ h1 {
 
 .button a ,
 .button {
+  padding: 5px 15px;
+  border-radius: 60px;
+
   color: #ffffff;
   font-weight: 700;
   font-size: 18px;
@@ -388,11 +481,20 @@ h1 {
 }
 
 .advertisement ul {
+  display: flex;
+  justify-content: space-between;
+
   list-style: none;
   color: #ffffff;
 }
 
+.raspberry .button,
+.chocolate .button {
+  margin-top: 20px;
+}/*кнопки не хотят двигаться?...*/
+
 .advertisement h2 {
+  margin: 7px 10px;
   color: #ffffff;
   font-size: 35px;
   font-weight: 700;
@@ -400,6 +502,7 @@ h1 {
 }
 
 .advertisement p {
+  margin: 10px 12px 0 10px;
   font-size: 18px;
   font-weight: 700;
   line-height: 22px;
@@ -424,11 +527,11 @@ h1 {
 }
 
 .features {
-  height: 310px;
+  height: 310px;/*лучше формировать с помощью падингов*/
 
   background-image: url("../img/background-feature.png");
   border-radius: 10px;
-}
+}/*Как то отцентровать*/
 
 .features ul {
   list-style: none;
@@ -439,6 +542,12 @@ h1 {
   font-size: 24px;
   font-weight: 500;
   line-height: 30px;
+}
+
+.layout-block {
+  display: flex;
+  justify-content: space-around;
+  margin: 50px auto;
 }
 
 .blog {
@@ -489,7 +598,14 @@ h1 {
 }
 
 .contacts {
+  display: block;
+  margin-top: 20px;
+  padding-left: 10px;
+  width: 302px;
+  border-radius: 15px;
+
   background-color: #feffff;
+  /*его надо поставить на карту сверху*/
 }
 
 .contacts h2 {
