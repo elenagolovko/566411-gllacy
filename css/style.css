@@ -15,14 +15,16 @@ body {
 }
 
 .site-wrapper {
-  margin: 20px 27px;
+  width: 1146px;
+  padding: 0 27px;
+  margin: 0 auto;
 }
 
 .background-wrapper {
-  margin: 0 auto;
   background-image: url("../img/background-index1.png");
   background-repeat: no-repeat;
-  background-size: contain;
+  background-position-x: center;
+  background-position-y: top;
 }
 
 .visually-hidden {
@@ -59,6 +61,8 @@ body {
 
 .user-navigation {
   width: 267px;
+  /*Немного не помещается, когда будет лупа вместо
+  инпута будет в самый раз*/
 }
 
 .site-navigation,
@@ -69,7 +73,7 @@ body {
   list-style: none;
 }
 
-.site-navigation a {
+.site-navigation > li > a {
   margin-right: 15px;
   color: #ffffff;
   font-weight: 700;
@@ -123,16 +127,29 @@ body {
   padding: 0;
 }
 
-.site-navigation > li:hover .kind-of-item,
-.site-navigation > li > a:focus .kind-of-item {
-  /*При фокусе подменюшка не появляется
-  дополнительная обертка с прозрачным
-   фоном на элемент навела мышкой он никуда не исчесзнет
-   вход и поиск тоже самое*/
+div .sub-menu {
+  position: absolute;
+  top: -5px;
+  left: -30px;
+  width: 95px;
+  height: 300px;
+  margin-top: 15px;
+}
+
+.site-navigation div.sub-menu:hover .kind-of-item {
   display: block;
 }
 
+.sub-menu ul:first-child {
+  border-radius: 10px 10px 0 0;
+  border-bottom: 1px solid #323232;
+}
+
 .kind-of-item a {
+  width: 143px;
+  display: inline-block;
+  padding: 15px 0 15px 20px;
+  box-sizing: border-box;
   color: #323232;
   font-size: 14px;
   font-weight: 400;
@@ -207,10 +224,6 @@ body {
   list-style: none;
   margin: 0;
   padding: 0;
-}
-
-.index-1 {
-  margin: 400px 270px 0 270px;
 }
 
 .index-1 .button {
@@ -300,8 +313,10 @@ h1 {/*Картинка фон? Или текст поверх нее?*/
   list-style: none;
 }
 
-.bestsellers-wrap {
-  margin: 50px 13px;
+.bestsellers-wrap,
+.catalog-list-wrapper {
+  width: 1174px;
+  margin: 45px auto;
 }
 
 .item {
@@ -534,6 +549,7 @@ h1 {/*Картинка фон? Или текст поверх нее?*/
 }
 
 .index-1 {
+  margin: 550px auto 0px;
   width: 700px;
 }
 
@@ -674,38 +690,52 @@ h1 {/*Картинка фон? Или текст поверх нее?*/
   border: 2px solid #d3d3d2;
 }
 
-.contacts {
-  display: block;
-  margin-top: 20px;
-  padding-left: 10px;
+.map-container {
+  width: 1210px;
+  margin: 0 auto;
+}
+
+.contacts-container {
+  position: absolute;
+  top: 2450px;
+  left: 1220px;
+  margin-right: 27px;
+  padding: 25px 20px;
+  box-sizing: border-box;
+
   width: 302px;
   border-radius: 15px;
 
   background-color: #feffff;
-  /*его надо поставить на карту сверху*/
+
 }
 
-.contacts h2 {
+.contacts h2,
+.contacts p {
+  margin: 0;
+  padding: 0;
   font-size: 14px;
   font-weight: 400;
   line-height: 20px;
 }
 
 .contacts b {
+  display: inline-block;
+  margin-bottom: 20px;
+
   font-size: 18px;
   line-height: 24px;
   font-weight: 700;
 }
 
-.contacts p {
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 20px;
-}
-
 .contacts  p a {
   color: #323232;
   text-decoration: none;
+}
+
+.contacts-container .button {
+  display: inline-block;
+  margin: 25px 15px 0 15px;
 }
 
 .write-to-us {
