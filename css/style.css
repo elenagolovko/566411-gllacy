@@ -51,6 +51,7 @@ body {
  .main-navigation,
  .header-container {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
  }
@@ -90,8 +91,8 @@ body {
   background-color: #d07058;
 }
 
-.site-navigation > li > a:hover,
-.site-navigation > li > a:focus {
+.site-navigation > li:not(:first-child) > a:hover,
+.site-navigation > li:not(:first-child) > a:focus {
   display: block;
   padding: 5px 15px;
   border-radius: 60px;
@@ -129,20 +130,25 @@ body {
 
 div .sub-menu {
   position: absolute;
-  top: -5px;
+  top: -15px;
   left: -30px;
   width: 95px;
-  height: 300px;
+  height: 350px;
   margin-top: 15px;
 }
 
-.site-navigation div.sub-menu:hover .kind-of-item {
+div.sub-menu:hover .kind-of-item {
   display: block;
 }
 
-.sub-menu ul:first-child {
+.sub-menu li:first-child a {
   border-radius: 10px 10px 0 0;
   border-bottom: 1px solid #323232;
+  /*В будущем задам с помощью линейного градиента*/
+}
+
+.sub-menu li:last-child a {
+  border-radius: 0 0 10px 10px;
 }
 
 .kind-of-item a {
@@ -418,6 +424,7 @@ h1 {/*Картинка фон? Или текст поверх нее?*/
 .footer-container {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin-top: 34px;
 }
 
@@ -426,7 +433,7 @@ h1 {/*Картинка фон? Или текст поверх нее?*/
 }
 
 .footer-social  a {
-  margin-right: 5px;
+  margin-right: 10px;
 
   color: #ffffff;
   text-decoration: none;
@@ -439,6 +446,13 @@ h1 {/*Картинка фон? Или текст поверх нее?*/
   padding: 0;
   list-style: none;
 }
+
+.social {
+  display: inline-block;
+  width: 37px;
+  height: 37px;
+}
+
 
 .info a {
   color: #ffffff;
@@ -613,8 +627,6 @@ h1 {/*Картинка фон? Или текст поверх нее?*/
 }
 
 .features {
-
-
   background-image: url("../img/background-feature.png");
   border-radius: 10px;
 }
@@ -695,11 +707,14 @@ h1 {/*Картинка фон? Или текст поверх нее?*/
   margin: 0 auto;
 }
 
+.contacts {
+  position: relative;
+}
+
 .contacts-container {
   position: absolute;
-  top: 2450px;
-  left: 1220px;
-  margin-right: 27px;
+  bottom: 54px;
+  right: 27px;
   padding: 25px 20px;
   box-sizing: border-box;
 
