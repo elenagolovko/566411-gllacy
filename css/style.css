@@ -6,12 +6,6 @@ body {
   font-size: 16px;
   line-height: 22px;
   color: #323232;
-
-  background-color: #849d8f;
-  /*
-  background-color: #8996a6;
-  background-color: #9d8b84;
-  */
 }
 
 .site-wrapper {
@@ -21,10 +15,29 @@ body {
 }
 
 .background-wrapper {
+  min-width: 940px;
   background-image: url("../img/background-index1.png");
   background-repeat: no-repeat;
+  background-color: #849d8f;
   background-position-x: center;
   background-position-y: top;
+
+  transition: background-image 0.5s ease, background-color 0.5s ease;
+}
+
+.background-wrapper::before,
+.background-wrapper::after {
+  content: "";
+
+  visibility: hidden;
+}
+
+.background-wrapper::before {
+  background-image: url("../img/background-index2.png");
+}
+
+.background-wrapper::after {
+  background-image: url("../img/background-index3.png");
 }
 
 .visually-hidden {
@@ -41,6 +54,88 @@ body {
 .round {
   border-radius: 140px;
   border: none;
+}
+
+.slider {
+  position: relative;
+
+  padding-top: 321px;
+
+  text-align: center;
+  color: #ffffff;
+}
+
+.slider-list {
+  margin: 8px auto 0px;
+  width: 700px;
+  text-align: center;
+  padding: 0;
+
+  list-style: none;
+}
+
+.slide {
+  display: none;
+}
+
+.slide-title {
+  width: 700px;
+  margin: 0 auto;
+  margin-bottom: 27px;
+
+  font-size: 60px;
+  line-height: 60px;
+  font-weight: 800;
+}
+
+.slider-controls {
+  position: absolute;
+  bottom: 3px;/*63px??*/
+  left: 0;
+  z-index: 20;
+
+  font-size: 0;
+}
+
+#product-1:checked ~ .background-wrapper {
+  background-color: #849d8f;
+  background-image: url("../img/background-index1.png");
+}
+
+#product-2:checked ~ .background-wrapper {
+  background-color: #8996a6;
+  background-image: url("../img/background-index2.png");
+}
+
+#product-3:checked ~ .background-wrapper {
+  background-color: #9d8b84;
+  background-image: url("../img/background-index3.png");
+}
+
+#product-1:checked ~ .background-wrapper #index-1,
+#product-2:checked ~ .background-wrapper #index-2,
+#product-3:checked ~ .background-wrapper #index-3 {
+  display: block;
+}
+
+#product-1:checked ~ .background-wrapper label[for="product-1"],
+#product-2:checked ~ .background-wrapper label[for="product-2"],
+#product-3:checked ~ .background-wrapper label[for="product-3"] {
+  background-color: #ffffff;
+}
+
+.slider-controls label {
+  display: inline-block;
+  width: 17px;
+  height: 17px;
+  margin-right: 8px;
+
+  vertical-align: top;
+
+  background-color: transparent;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  cursor: pointer;
 }
 
 .main-header {
@@ -326,6 +421,12 @@ body {
   line-height: 16px;
 }
 
+.breadcrumbs a:hover,
+.breadcrumbs a:focus,
+.breadcrumbs a:active {
+  color: #ffbc9e;
+}
+
 .breadcrumbs li:not(.breadcrumbs-current)::after {
   content: "\00BB";
   margin: 0 6px;
@@ -546,7 +647,7 @@ h1 {/*Картинка фон? Или текст поверх нее?*/
 }
 
 .footer-social {
-  width: 267px;/*267 Сейчас маловат...*/
+  width: 267px;
 }
 
 .footer-social  a {
@@ -645,7 +746,6 @@ h1 {/*Картинка фон? Или текст поверх нее?*/
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  min-height: 215px;
   padding: 20px;
   border-radius: 5px;
 
@@ -656,8 +756,10 @@ h1 {/*Картинка фон? Или текст поверх нее?*/
 .login-form input[type="password"] {
   display: inline-block;
   vertical-align: middle;
+  padding: 10px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
   width: 242px;
-  padding: 0;
 
   color: #999999;
   font-size: 14px;
@@ -674,50 +776,68 @@ h1 {/*Картинка фон? Или текст поверх нее?*/
   border: 2px solid #d3d3d2;
 }
 
-.login-enter {
-  display: inherit;
-}
-
-.login-enter a {
-  background-color: inherit;
+.help {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
 }
 
 .help a {
+  padding: 0;
   color: #323232;
   font-weight: 400;
   font-size: 13px;
   line-height: 24px;
+  background-color: inherit;
+  text-decoration: underline;
 }
 
-.help {
+.help a:hover,
+.help a:focus,
+.help a:active  {
+  color: #e84d37;
+  background: none;
+}
+
+.help p {
   margin: 0;
 }
 
-.button a ,
+.login-form .button {
+  align-self: flex-start;
+}
+
 .button {
-  padding: 10px 20px;
-  border-radius: 60px;
+  display: inline-block;
+  padding: 12px 44px;
 
   color: #ffffff;
-  font-weight: 700;
+  font-weight: 600;
   font-size: 18px;
   line-height: 24px;
+  text-align: center;
+  vertical-align: top;
   text-decoration: none;
+  text-shadow: 0 2px 5px rgba(160, 32, 11, 0.76);
 
-  background-color: #ee5d3e;
+  background-color: #f26843;
+  background: linear-gradient(to bottom, #f26843 0%, #e74a35 100%);
+  box-shadow: 0 2px 2px rgba(172, 16, 0, 0.64);
+  border-radius: 50px;
   border: none;
+
+  cursor: pointer;
 }
 
-.button a:hover,
-.button a:focus,
 .button:hover,
 .button:focus {
-  background-color: #f17f65;
+  background: linear-gradient(to bottom, #f58669 0%, #ec6f5e 100%);
+  box-shadow: 0 2px 2px rgba(172, 16, 0, 1);
 }
 
-.button a:active,
 .button:active {
-  box-shadow: inset 0px 2px 2px  #942718;
+  background: linear-gradient(to bottom, #d87432 0%, #e1613e 100%);
+  box-shadow: inset 0px 2px 2px rgba(172, 16, 0, 1);
 }
 
 .user-cart {
@@ -740,36 +860,15 @@ h1 {/*Картинка фон? Или текст поверх нее?*/
   color: #999999;
 }
 
-.index-1 {
-  margin: 330px auto 0px;
-  width: 700px;
-  text-align: center;
-}
-
-.index-1 h2,
-.index-2 h2,
-.index-3 h2 {
-  margin: 0;
-  color: #ffffff;
-  font-size: 60px;
-  line-height: 60.35px;
-  font-weight: 700;
-}
-
 .advertisement ul {
   display: flex;
   justify-content: space-between;
+  margin: 0;
+  margin-top: 60px;
+  padding: 0;
 
   list-style: none;
-  margin: 0;
-  padding: 0;
   color: #ffffff;
-}
-
-.raspberry .button,
-.chocolate .button {
-  display: inline-block;
-  margin: 45px 20px 20px 345px;/*Нужен другой способ*/
 }
 
 .advertisement h2 {
@@ -781,7 +880,7 @@ h1 {/*Картинка фон? Или текст поверх нее?*/
 }
 
 .advertisement p {
-  margin: 10px 12px 0 10px;
+  margin: 10px 12px 20px 10px;
   font-size: 18px;
   font-weight: 700;
   line-height: 22px;
@@ -957,7 +1056,8 @@ h1 {/*Картинка фон? Или текст поверх нее?*/
 }
 
 .contacts-container .button {
-  display: inline-block;
+  padding-left: 22px;
+  padding-right: 22px;
   margin-top: 23px;
 }
 
