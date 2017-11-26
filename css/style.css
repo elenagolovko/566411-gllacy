@@ -44,7 +44,6 @@ body {
 }
 
 .main-header {
-  width: 1200px;
   margin: 0 auto;
 }
 
@@ -61,43 +60,38 @@ body {
 }
 
 .user-navigation {
+  position: relative;
   width: 267px;
-  /*Немного не помещается, когда будет лупа вместо
-  инпута будет в самый раз*/
 }
 
 .site-navigation,
 .user-navigation {
   display: flex;
+  align-items: center;
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-.site-navigation > li > a {
-  margin-right: 15px;
+.site-navigation a {
   color: #ffffff;
   font-weight: 700;
   line-height: 18px;
 }
 
-.site-navigation > .current > a {
-  padding: 5px 15px;
-  border-radius: 60px;
-
-  color: #ffffff;
-  text-decoration: none;
-
-  background-color: #d07058;
+.site-navigation > li:nth-child(2) {
+  margin-left: 100px;
+  margin-right: 21px;
 }
 
 .site-navigation > li:not(:first-child) > a:hover,
 .site-navigation > li:not(:first-child) > a:focus {
   display: block;
-  padding: 5px 15px;
-  border-radius: 60px;
-
+  text-align: center;
+  padding: 5px;
+  margin: 0 5px;
   color: #333333;
+  border-radius: 60px;
   text-decoration: none;
 
   background-color: #f8f7f4;
@@ -107,54 +101,24 @@ body {
   box-shadow: inset 0px 2px 1px #696969;
 }
 
-.header-contacts {
-  float: right;
-  margin-right: 10px;
-  /*Это вообще законно?*/
-}
-
-.site-navigation > li {
-  position: relative;
-  margin-left: 15px;
-}
-
-.site-navigation .kind-of-item {
-  position: absolute;
+.kind-of-item {
   display: none;
-  top: 30px;
-  left: 15px;
   list-style: none;
   margin: 0;
+  margin-top: 5px;
   padding: 0;
 }
 
-div .sub-menu {
-  position: absolute;
-  top: -15px;
-  left: -30px;
-  width: 95px;
-  height: 350px;
-  margin-top: 15px;
-}
-
-div.sub-menu:hover .kind-of-item {
-  display: block;
-}
-
-.sub-menu li:first-child a {
+.kind-of-item li:first-child a {
   border-radius: 10px 10px 0 0;
   border-bottom: 1px solid #323232;
   /*В будущем задам с помощью линейного градиента*/
 }
 
-.sub-menu li:last-child a {
-  border-radius: 0 0 10px 10px;
-}
-
 .kind-of-item a {
   width: 143px;
   display: inline-block;
-  padding: 15px 0 15px 20px;
+  padding: 8px 0 8px 20px;
   box-sizing: border-box;
   color: #323232;
   font-size: 14px;
@@ -165,10 +129,8 @@ div.sub-menu:hover .kind-of-item {
   background-color: #f8f7f4;
 }
 
-.kind-of-item-current a {
-  color: #000000;
-
-  background-color: #d07058;
+.kind-of-item li:last-child a {
+  border-radius: 0 0 10px 10px;
 }
 
 .kind-of-item a:hover,
@@ -180,7 +142,107 @@ div.sub-menu:hover .kind-of-item {
   background-color: #f6b5a5;
 }
 
+.sub-menu > a {
+  margin-left: 16px;
+  position: relative;
+
+}
+
+.sub-menu {
+  position: absolute;
+  top: 22px;
+  width: 120px;
+}
+
+.inner-page .sub-menu {
+  top: 19px;
+}
+
+.inner-page .sub-menu > a {
+  display: block;
+  text-align: center;
+  width: 87px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  margin: 0 5px;
+  border-radius: 60px;
+  color: #ffffff;
+  text-decoration: none;
+
+  background-color: #d07058;
+
+}
+
+.sub-menu:hover .kind-of-item {
+  display: block;
+  width: 143px;
+}
+
+.sub-menu:hover > a {
+  display: block;
+  text-align: center;
+  width: 87px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  margin: 0 5px;
+  color: #333333;
+  border-radius: 60px;
+  text-decoration: none;
+
+  background-color: #f8f7f4;
+}
+
+.header-contacts {
+  float: right;
+  margin-top: -15px;
+  margin-right: 10px;
+}
+
+.user-navigation a {
+  display: inline-block;
+  text-align: center;
+  margin-left: 10px;
+  padding: 6px 0px;
+  border-radius: 60px;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16px;
+  text-decoration: none;
+
+  background-color: #a1b6aa;
+  /*Позже сделать линейным градиентом*/
+}
+
+.user-navigation a:hover,
+.user-navigation a:focus {
+  color: #323232;
+
+  background-color: #ffffff;
+}
+
+.user-navigation a:hover g {
+  fill: #000000;
+}
+
+.search-loupe {
+  position: relative;
+  width: 33px;
+  min-height: 30px;
+
+  border-radius: 60px;
+  background-color: #a1b6aa;
+  /*Позже сделать линейным градиентом*/
+}
+
+.search-loupe svg {
+  position: absolute;
+  left: 8px;
+  top: 6px;
+}
+
 .search input[type="search"]{
+  display: none;
   color: #999999;
   font-size: 14px;
   line-height: 24px;
@@ -194,22 +256,29 @@ div.sub-menu:hover .kind-of-item {
   border: 2px solid #d3d3d2;
 }
 
-.user-navigation a {
-  margin-left: 10px;
-  color: #ffffff;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 16px;
-  text-decoration: none;
+/*.search-form:hover .search input[type="search"] {
+  display: block;
+}*/
 
-  background-color: #aabcb2;
+.login-link {
+  min-width: 94px;
 }
 
-.user-navigation a:hover,
-.user-navigation a:focus {
-  color: #323232;
+.login-link svg {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 9px;
+}
 
-  background-color: #ffffff;
+.cart-link {
+  min-width: 118px;
+}
+
+.cart-link svg {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 7px;
+
 }
 
 .header-contacts p {
@@ -235,10 +304,14 @@ div.sub-menu:hover .kind-of-item {
 .index-1 .button {
   display: inline-block;
   padding: 15px 55px;
-  margin: 40px 200px;
+  margin: 40px auto;
+}
+/* и другие стили слайдера...*/
+
+.filter-wrapper {
+  margin-top: 26px;
 }
 
-/* и другие стили слайдера...*/
 .breadcrumbs {
   display: flex;
   margin: 0;
@@ -247,11 +320,17 @@ div.sub-menu:hover .kind-of-item {
 }
 
 .breadcrumbs a {
-  margin-right: 5px;
   color: #ffffff;
   font-size: 14px;
   font-weight: 400;
   line-height: 16px;
+}
+
+.breadcrumbs li:not(.breadcrumbs-current)::after {
+  content: "\00BB";
+  margin: 0 6px;
+
+  color: #ffffff;
 }
 
 h1 {/*Картинка фон? Или текст поверх нее?*/
@@ -263,6 +342,9 @@ h1 {/*Картинка фон? Или текст поверх нее?*/
 
 .filter {
   display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
   margin-top: 30px;
   width: 700px;
   flex-wrap: wrap;
@@ -275,7 +357,12 @@ h1 {/*Картинка фон? Или текст поверх нее?*/
   border: none;
 }
 
+.filter fieldset:last-of-type {
+  margin-top: 17px;
+}
+
 .filter legend {
+  margin-bottom: 6px;
   color: #ffffff;
   font-size: 14px;
   line-height: 16px;
@@ -330,8 +417,22 @@ h1 {/*Картинка фон? Или текст поверх нее?*/
 }
 
 .item article {
+  position: relative;
   padding: 0 13px;
   text-align: center;
+}
+
+.hit-item::before {
+  content: "";
+
+  position: absolute;
+
+  width: 61px;
+  height: 61px;
+
+  background-image: url("../img/hit.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
 }
 
 .item a {
@@ -354,7 +455,7 @@ h1 {/*Картинка фон? Или текст поверх нее?*/
 }
 
 .item:hover p {
-  display: block;
+  display: inline-block;
   padding: 5px 15px;
   border-radius: 60px;
   width: 200px;
@@ -374,6 +475,15 @@ h1 {/*Картинка фон? Или текст поверх нее?*/
 .item p:active {
   background-color: #db5238;
   box-shadow: inset 0px 2px 2px #942718 ;
+}
+
+.item img {
+  margin-bottom: -63px;
+}
+
+.item .price-and-weight {
+  display: inline-block;
+  margin-left: -120px;
 }
 
 .item .price {
@@ -401,14 +511,21 @@ h1 {/*Картинка фон? Или текст поверх нее?*/
   list-style: none;
 }
 
+.prev svg {
+  transform: rotate(180deg);
+}
+
 .pagination-list a {
+  padding: 5px 10px;
+  border-radius: 60px;
   margin-right: 5px;
+
   text-decoration: none;
   color: #ffffff;
 }
 
-.pagination-item:hover,
-.pagination-item:focus {
+.pagination-item a:hover,
+.pagination-item a:focus {
   color: #ffffff;
 
   background-color: #9bafa4;
@@ -433,8 +550,6 @@ h1 {/*Картинка фон? Или текст поверх нее?*/
 }
 
 .footer-social  a {
-  margin-right: 10px;
-
   color: #ffffff;
   text-decoration: none;
   text-align: left;
@@ -449,14 +564,29 @@ h1 {/*Картинка фон? Или текст поверх нее?*/
 
 .social {
   display: inline-block;
-  width: 37px;
-  height: 37px;
+  width: 32px;
+  height: 32px;
+  border: 2px solid #adbeb5;
+  border-radius: 230px;
+  margin-right: 10px;
 }
 
+ .social:hover g,
+ .social:hover path {
+  fill: #ffffff;
+}
+
+.social:active {
+  border: 2px solid #dae2de;
+}
+
+.social:active g,
+.social:active path {
+  fill: #e9e9e9;
+}
 
 .info a {
   color: #ffffff;
-  text-decoration: none;
 }
 
 .info {
@@ -465,15 +595,30 @@ h1 {/*Картинка фон? Или текст поверх нее?*/
 
 .info p {
   display: flex;
-  width: 280px;
   flex-wrap: wrap;
   justify-content: space-between;
+  position: relative;
+  width: 280px;
+  margin: 0;
 
   font-size: 13px;
-  font-weight: 700;
   line-height: 16px;
   text-align: center;
 }
+
+.info svg {
+  position: absolute;
+  left: -22px;
+
+}
+
+.info a:hover {
+  font-weight: 700;
+}
+
+/*.info a:hover svg {
+  display: block;
+}*/
 
 .footer-copyright {
   width: 267px;
@@ -481,18 +626,39 @@ h1 {/*Картинка фон? Или текст поверх нее?*/
 
 .footer-copyright a,
 .footer-copyright p {
+  margin: 0;
   color: #ffffff;
   font-size: 12px;
   line-height: 16px;
   font-weight: 400;
 }
 
+.modal-login {
+  display: inline-block;
+  position: absolute;
+  top: 40px;
+  right: 130px;
+}
+
 .login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 215px;
+  padding: 20px;
+  border-radius: 5px;
+
   background-color: #f8f7f4;
 }
 
 .login-form input[type="email"],
 .login-form input[type="password"] {
+  display: inline-block;
+  vertical-align: middle;
+  width: 242px;
+  padding: 0;
+
   color: #999999;
   font-size: 14px;
   line-height: 24px;
@@ -508,6 +674,14 @@ h1 {/*Картинка фон? Или текст поверх нее?*/
   border: 2px solid #d3d3d2;
 }
 
+.login-enter {
+  display: inherit;
+}
+
+.login-enter a {
+  background-color: inherit;
+}
+
 .help a {
   color: #323232;
   font-weight: 400;
@@ -515,9 +689,13 @@ h1 {/*Картинка фон? Или текст поверх нее?*/
   line-height: 24px;
 }
 
+.help {
+  margin: 0;
+}
+
 .button a ,
 .button {
-  padding: 5px 15px;
+  padding: 10px 20px;
   border-radius: 60px;
 
   color: #ffffff;
@@ -563,8 +741,9 @@ h1 {/*Картинка фон? Или текст поверх нее?*/
 }
 
 .index-1 {
-  margin: 550px auto 0px;
+  margin: 330px auto 0px;
   width: 700px;
+  text-align: center;
 }
 
 .index-1 h2,
@@ -590,7 +769,7 @@ h1 {/*Картинка фон? Или текст поверх нее?*/
 .raspberry .button,
 .chocolate .button {
   display: inline-block;
-  margin-top: 20px;
+  margin: 45px 20px 20px 345px;/*Нужен другой способ*/
 }
 
 .advertisement h2 {
@@ -632,9 +811,25 @@ h1 {/*Картинка фон? Или текст поверх нее?*/
 }
 
 .features ul {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+.features p {
+  width: 486px;
+  margin: 0;
+  margin-left: 73px;
+  margin-bottom: 26px;
+}
+
+.features svg {
+  float: left;
+  margin-left: 19px;
 }
 
 .features h2 {
@@ -658,6 +853,9 @@ h1 {/*Картинка фон? Или текст поверх нее?*/
 .blog {
   width: 560px;
   height: 220px;
+  padding-top: 26px;
+  padding-left: 19px;
+  box-sizing: border-box;
 
   background-image: url("../img/background-strawberry.jpg");
   border-radius: 10px;
@@ -666,6 +864,7 @@ h1 {/*Картинка фон? Или текст поверх нее?*/
 }
 
 .blog h2 {
+  margin: 0;
   font-size: 16px;
   font-weight: 500;
   line-height: 22px;
@@ -679,6 +878,11 @@ h1 {/*Картинка фон? Или текст поверх нее?*/
   text-align: center;
 }
 
+.blog p {
+  width: 284px;
+  margin: 0;
+}
+
 .mailing {
   width: 560px;
   height: 220px;
@@ -686,6 +890,10 @@ h1 {/*Картинка фон? Или текст поверх нее?*/
   border-image-source: url("../img/bg-post.svg");
   border-radius: 10px;
   background-color: #f8f7f4;
+}
+
+.mailing p {
+  margin: 0;
 }
 
 .mailing input[type="email"]{
@@ -750,7 +958,7 @@ h1 {/*Картинка фон? Или текст поверх нее?*/
 
 .contacts-container .button {
   display: inline-block;
-  margin: 25px 15px 0 15px;
+  margin-top: 23px;
 }
 
 .write-to-us {
