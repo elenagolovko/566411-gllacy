@@ -40,6 +40,10 @@ body {
   background-image: url("../img/background-index3.png");
 }
 
+.inner-page {
+  background-color: #849d8f;
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -102,6 +106,7 @@ body {
   background-image: url("../img/background-index1.png");
 }
 
+
 #product-2:checked ~ .background-wrapper {
   background-color: #8996a6;
   background-image: url("../img/background-index2.png");
@@ -111,6 +116,7 @@ body {
   background-color: #9d8b84;
   background-image: url("../img/background-index3.png");
 }
+
 
 #product-1:checked ~ .background-wrapper #index-1,
 #product-2:checked ~ .background-wrapper #index-2,
@@ -154,78 +160,93 @@ body {
   width: 500px;
 }
 
-.user-navigation {
-  position: relative;
-  width: 267px;
-}
-
-.site-navigation,
-.user-navigation {
+.site-navigation {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-.site-navigation a {
+.site-navigation > li {
+  display: block;
+  padding: 0 13px;
+  border-radius: 50px;
+}
+
+.site-navigation > li:hover {
+  background-color: #f8f7f4;
+  border: none;
+}
+
+.site-navigation > li > a {
   color: #ffffff;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   font-weight: 700;
   line-height: 18px;
 }
 
-.site-navigation > li:nth-child(2) {
-  margin-left: 100px;
-  margin-right: 21px;
-}
-
-.site-navigation > li:not(:first-child) > a:hover,
-.site-navigation > li:not(:first-child) > a:focus {
-  display: block;
-  text-align: center;
-  padding: 5px;
-  margin: 0 5px;
+.site-navigation > li:hover > a,
+.site-navigation > li:focus > a {
   color: #333333;
-  border-radius: 60px;
-  text-decoration: none;
-
-  background-color: #f8f7f4;
 }
 
-.site-navigation a:active {
+.site-navigation li:active {
   box-shadow: inset 0px 2px 1px #696969;
 }
 
-.kind-of-item {
-  display: none;
-  list-style: none;
-  margin: 0;
-  margin-top: 5px;
-  padding: 0;
+.catalog-menu {
+  position: relative;
+  margin-left: 20px;
 }
 
-.kind-of-item li:first-child a {
-  border-radius: 10px 10px 0 0;
-  border-bottom: 1px solid #323232;
-  /*В будущем задам с помощью линейного градиента*/
+.catalog-menu::after {
+  content: "";
+
+  position: absolute;
+  left: -15px;
+  height: 5px;
+  width: 143px;
+  background-color: transparent;
+}
+
+.sub-menu {
+  position: absolute;
+  z-index: 10;
+  left: -15px;
+  top: 27px;
+  width: 143px;
+  display: none;
+  box-shadow: 0px 10px 35px #323232;
+}
+
+.catalog-menu:hover .sub-menu {
+  display: block;
+}
+
+.kind-of-item {
+  margin: 0;
+  padding: 5px 0;
+  box-sizing: border-box;
+
+  background-color: #f8f7f4;
+  border-radius: 5px;
+  list-style: none;
 }
 
 .kind-of-item a {
-  width: 143px;
   display: inline-block;
-  padding: 8px 0 8px 20px;
+  width: 100%;
+  padding: 5px 0 5px 27px;
   box-sizing: border-box;
+
   color: #323232;
+  border: none;
+  text-decoration: none;
   font-size: 14px;
   font-weight: 400;
   line-height: 16px;
-  text-decoration: none;
-
-  background-color: #f8f7f4;
-}
-
-.kind-of-item li:last-child a {
-  border-radius: 0 0 10px 10px;
 }
 
 .kind-of-item a:hover,
@@ -237,60 +258,30 @@ body {
   background-color: #f6b5a5;
 }
 
-.sub-menu > a {
-  margin-left: 16px;
-  position: relative;
+.news-first {
+  margin-bottom: 5px;
+  padding-bottom: 10px;
 
-}
-
-.sub-menu {
-  position: absolute;
-  top: 22px;
-  width: 120px;
-}
-
-.inner-page .sub-menu {
-  top: 19px;
-}
-
-.inner-page .sub-menu > a {
-  display: block;
-  text-align: center;
-  width: 87px;
-  padding-bottom: 5px;
-  padding-top: 5px;
-  margin: 0 5px;
-  border-radius: 60px;
-  color: #ffffff;
-  text-decoration: none;
-
-  background-color: #d07058;
-
-}
-
-.sub-menu:hover .kind-of-item {
-  display: block;
-  width: 143px;
-}
-
-.sub-menu:hover > a {
-  display: block;
-  text-align: center;
-  width: 87px;
-  padding-bottom: 5px;
-  padding-top: 5px;
-  margin: 0 5px;
-  color: #333333;
-  border-radius: 60px;
-  text-decoration: none;
-
-  background-color: #f8f7f4;
+  box-shadow: 0px 6px 0 -5px rgba(50, 50, 50, 0.3);
 }
 
 .header-contacts {
   float: right;
   margin-top: -15px;
   margin-right: 10px;
+}
+
+.user-navigation {
+  position: relative;
+  width: 267px;
+}
+
+.user-navigation {
+  display: flex;
+  align-items: flex-start;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .user-navigation a {
@@ -305,8 +296,7 @@ body {
   line-height: 16px;
   text-decoration: none;
 
-  background-color: #a1b6aa;
-  /*Позже сделать линейным градиентом*/
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 .user-navigation a:hover,
@@ -326,8 +316,7 @@ body {
   min-height: 30px;
 
   border-radius: 60px;
-  background-color: #a1b6aa;
-  /*Позже сделать линейным градиентом*/
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 .search-loupe svg {
@@ -336,8 +325,45 @@ body {
   top: 6px;
 }
 
-.search input[type="search"]{
+.search-loupe:hover {
+  background-color: white;
+  cursor: pointer;
+}
+
+.search-loupe:hover path {
+  fill: #000000;
+}
+
+.search-loupe:hover + .search-container {
+  display: block;
+}
+
+.search-loupe::after {
+  content: "";
+
+  position: absolute;
+  top: 30px;
+  left: -310px;
+  width: 344px;
+  height: 5px;
+}
+
+.search-loupe + .search-container {
   display: none;
+  position: absolute;
+  z-index: 10;
+  right: 235px;
+  top: 35px;
+  width: 344px;
+  box-sizing: border-box;
+  padding: 20px 12px;
+  border-radius: 5px;
+  text-align: center;
+
+  background-color: #f8f7f4;
+}
+
+.search input[type="search"]{
   color: #999999;
   font-size: 14px;
   line-height: 24px;
@@ -350,10 +376,6 @@ body {
 .search input[type="search"]:focus {
   border: 2px solid #d3d3d2;
 }
-
-/*.search-form:hover .search input[type="search"] {
-  display: block;
-}*/
 
 .login-link {
   min-width: 94px;
@@ -401,7 +423,6 @@ body {
   padding: 15px 55px;
   margin: 40px auto;
 }
-/* и другие стили слайдера...*/
 
 .filter-wrapper {
   margin-top: 26px;
@@ -434,7 +455,7 @@ body {
   color: #ffffff;
 }
 
-h1 {/*Картинка фон? Или текст поверх нее?*/
+h1 {
   margin: 0;
   color: #ffffff;
   font-size: 35px;
@@ -592,7 +613,7 @@ h1 {/*Картинка фон? Или текст поверх нее?*/
   color: #ffffff;
   line-height: 45px;
 }
-/*как альтернативный вариант вместо графического изображения?*/
+
 .ruble {
   font-size: 37px;
   font-weight: 500;
@@ -667,7 +688,7 @@ h1 {/*Картинка фон? Или текст поверх нее?*/
   display: inline-block;
   width: 32px;
   height: 32px;
-  border: 2px solid #adbeb5;
+  border: 2px solid rgba(255, 255, 255, 0.8);
   border-radius: 230px;
   margin-right: 10px;
 }
@@ -735,7 +756,7 @@ h1 {/*Картинка фон? Или текст поверх нее?*/
 }
 
 .modal-login {
-  display: inline-block;
+  display: none;
   position: absolute;
   top: 40px;
   right: 130px;
@@ -805,6 +826,9 @@ h1 {/*Картинка фон? Или текст поверх нее?*/
 
 .login-form .button {
   align-self: flex-start;
+
+  padding-left: 24px;
+  padding-right: 24px;
 }
 
 .button {
@@ -895,6 +919,11 @@ h1 {/*Картинка фон? Или текст поверх нее?*/
   border-radius: 10px;
 }
 
+.raspberry .button {
+  margin-left: 330px;
+  margin-top: 35px;
+}
+
 .chocolate {
   width: 560px;
   height: 230px;
@@ -902,6 +931,11 @@ h1 {/*Картинка фон? Или текст поверх нее?*/
   background-image: url("../img/choco.png");
   background-repeat: no-repeat;
   border-radius: 10px;
+}
+
+.chocolate .button {
+  margin-left: 300px;
+  margin-top: 35px;
 }
 
 .features {
