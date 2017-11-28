@@ -541,8 +541,7 @@ h1 {
 }
 
 .filter select,
-.filter-mask,
-.filter button {
+.filter-mask {
   padding: 5px;
   border-radius: 60px;
 
@@ -553,10 +552,21 @@ h1 {
   border: none;
 }
 
+.filter button {
+  padding: 5px 22px;
+
+  border: 2px solid #ffffff;
+  border-radius: 60px;
+  line-height: 18px;
+  background-color: #aabcb2;
+  color: #ffffff;
+}
+
 .filter button:hover {
   color: #323232;
 
   background-color: #ffffff;
+  border-color: #ffffff;
 }
 
 .filter button:active {
@@ -564,6 +574,63 @@ h1 {
 
   background-color: #ededed;
   box-shadow: inset 0px 2px 1px #696969;
+}
+
+.filter-range {
+  width: 219px;
+}
+
+.range-controls {
+  position: relative;
+  padding: 7px;
+}
+
+.range-controls .scale {
+  height: 4px;
+  padding-left: 27px;
+
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.range-controls .bar {
+  width: 105px;
+  height: 4px;
+
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.range-toggle {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  box-sizing: border-box;
+
+  background-color: #ababab;
+  border: 8px solid #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 2px 1px 0 rgba(0, 1, 1, 0.2);
+  cursor: pointer;
+}
+
+.range-toggle-min {
+  top: -2px;
+  left: 20px;
+}
+
+.range-toggle-max {
+  top: -2px;
+  right: 60px;
+}
+
+.selection-parameters:hover,
+.selection-parameters:focus {
+  color: #323232;
+
+  cursor: pointer;
+}
+
+.selection-parameters:active {
+  background-color: #ffffff;/*!!!!!!!!!!*/
 }
 
 .catalog-list ul,
@@ -612,7 +679,12 @@ h1 {
 }
 
 .item h3 {
-  margin: 10px 0;
+  display: inline;
+
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2) 100%);
+  background-position: 0 100%;
+  background-size: 10px 1px;
+  background-repeat: repeat-x;
   font-size: 16px;
   font-weight: 500;
 }
