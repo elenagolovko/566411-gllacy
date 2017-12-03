@@ -220,26 +220,28 @@
           <img src="img/map.jpg" width="1200" height="640" alt="Адрес главного офиса и офлайн магазина:ул.Большая Конюшенная 19/8, Санкт-Петербург">
           <div class="contacts-container">
             <h2>Адрес главного офиса и офлайн магазина:</h2>
-          <b>ул.Большая Конюшенная 19/8, Санкт-Петербург</b>
-          <p>Для заказов по телефону:<a href="tel:+78124502525"><b>8 812 450-25-25</b></a><br>(с 10 до 20 ежедневно)</p>
-          <a class="button" href="#">Форма обратной связи</a>
-        </div>
+            <b>ул.Большая Конюшенная 19/8, Санкт-Петербург</b>
+            <p>Для заказов по телефону:<a href="tel:+78124502525"><b>8 812 450-25-25</b></a><br>(с 10 до 20 ежедневно)</p>
+            <a class="button overlay-link" href="#">Форма обратной связи</a>
+          </div>
+          <div class="write-to-us-container">
+            <section class="write-to-us">
+              <h2>Мы обязательно вам ответим!</h2>
+              <button class="modal-close" type="button" value="close"></button>
+              <form class="answer-us-form" action="https://echo.htmlacademy.ru" method="post">
+                <label class="visually-hidden" for="answer-username">Ваше имя</label>
+                <input type="text" id="answer-username" name="name" value="Как вас зовут?">
+                <label class="visually-hidden" for="answer-email">Ваша почта</label>
+                <input type="email" id="answer-email" name="email" value="Ваша почта для ответа?" required>
+                <label class="visually-hidden" for="answer-comment">Текст вопроса</label>
+                <textarea name="comment" id="answer-comment" placeholder="Напишите что-нибудь..."></textarea>
+                <button class="button" type="submit">Отправить</button>
+              </form>
+            </section>
+          </div>
         </section>
       </section>
     </div>
-     <section class="write-to-us">
-      <h2>Мы обязательно вам ответим!</h2>
-      <button type="button" value="close"></button>
-      <form class="answer-us-form" action="https://echo.htmlacademy.ru" method="post">
-        <label class="visually-hidden" for="answer-username">Ваше имя</label>
-        <input type="text" id="answer-username" name="name" value="Как вас зовут?">
-        <label class="visually-hidden" for="answer-email">Ваша почта</label>
-        <input type="email" id="answer-email" name="email" value="Ваша почта для ответа?" required>
-        <label class="visually-hidden" for="answer-comment">Текст вопроса</label>
-        <textarea name="comment" id="answer-comment" placeholder="Напишите что-нибудь..."></textarea>
-        <button class="button" type="submit">Отправить</button>
-      </form>
-    </section>
     </main>
     <footer class="main-footer">
       <div class="site-wrapper">
@@ -278,11 +280,27 @@
       </section>
       <section class="footer-copyright">
         <h2 class="visually-hidden">Кем изготовлено</h2>
+        <a href="https://htmlacademy.ru"><img src="img/logo-htmlacademy.svg" width="108" height="40" alt="HTML Академия" ></a>
         <p>Сделано в <a href="https://htmlacademy.ru">HTML Academy</a> © 2017</p>
       </section>
       </div>
       </div>
     </footer>
     </div>
+    <script type="text/javascript">
+      var link = document.querySelector(".overlay-link");
+
+      var popup = document.querySelector(".write-to-us-container");
+      var close = popup.querySelector(".modal-close");
+
+      link.addEventListener("click",function(evt){
+        popup.classList.add("overlay-show");
+      });
+
+      close.addEventListener("click", function(evt){
+        evt.preventDefault();
+        popup.classList.remove("overlay-show");
+      });
+    </script>
   </body>
 </html>

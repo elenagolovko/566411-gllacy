@@ -144,6 +144,10 @@ body {
   cursor: pointer;
 }
 
+.slider-controls label:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
 .main-header {
   margin: 0 auto;
 }
@@ -198,6 +202,7 @@ body {
 
 .site-navigation .current {
   background-color: #d07058;
+  border: none;
 }
 
 .catalog-menu {
@@ -228,6 +233,10 @@ body {
 .sub-menu .submenu-current {
   background-color: #d07058;
   color: #ffffff;
+}
+
+.sub-menu .submenu-current:hover {
+  color: #333333;
 }
 
 .catalog-menu:hover .sub-menu {
@@ -375,12 +384,13 @@ body {
 
 .search input[type="search"]:hover,
 .search input[type="search"]:focus {
-  border: 2px solid #d3d3d2;
+  box-shadow: 0px 0px 0 1px #d3d3d2;
 }
 
 .login-link-header:hover a,
 .cart-link-header:hover > a {
   color: #323232;
+  text-decoration: none;
 }
 
 .login-link-header:hover g,
@@ -422,8 +432,8 @@ body {
 
   position: absolute;
   bottom: -5px;
-  left: -146px;
-  width: 282px;
+  left: 40px;
+  width: 100px;
   height: 5px;
 }
 
@@ -486,6 +496,8 @@ body {
 
 .breadcrumbs a {
   color: #ffffff;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   font-size: 14px;
   font-weight: 400;
   line-height: 16px;
@@ -495,6 +507,7 @@ body {
 .breadcrumbs a:focus,
 .breadcrumbs a:active {
   color: #ffbc9e;
+  border-bottom: 1px solid rgba(255, 188, 158, 0.3);
 }
 
 .breadcrumbs li:not(.breadcrumbs-current)::after {
@@ -512,6 +525,7 @@ h1 {
 }
 
 .filter {
+  position: relative;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -540,8 +554,8 @@ h1 {
   font-weight: 500;
 }
 
-.filter select,
-.filter-mask {
+.filter-mask,
+.selection-parameters {
   padding: 10px 15px;
   border-radius: 60px;
 
@@ -552,10 +566,44 @@ h1 {
   border: none;
 }
 
-.filter button {
-  padding: 5px 22px;
+.selection-parameters {
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  /*appearance: none;*/
+  text-indent: 0.01px;
+  /*text-overflow: "";*/
+}
 
-  border: 2px solid #ffffff;
+.select-list::after {
+  content: "";
+
+  position: absolute;
+  bottom: 94px;
+  left: 150px;
+  width: 0px;
+  height: 0px;
+
+  border: 5px solid transparent;
+  border-top-color: #ffffff;
+  border-bottom: 0;
+}
+
+.select-list:hover .selection-parameters {
+  color: #323232;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+
+.select-list:hover::after {
+  border-top-color: #323232;
+}
+
+.filter button {
+  padding: 10px 22px;
+
+  border: none;
+  box-shadow: 0px 0px 0 2px #ffffff;
   border-radius: 60px;
   line-height: 18px;
   background-color: #aabcb2;
@@ -566,7 +614,8 @@ h1 {
   color: #323232;
 
   background-color: #ffffff;
-  border-color: #ffffff;
+  border: none;
+  cursor: pointer;
 }
 
 .filter button:active {
@@ -622,17 +671,6 @@ h1 {
   right: 30px;
 }
 
-.selection-parameters:hover,
-.selection-parameters:focus {
-  color: #323232;
-
-  cursor: pointer;
-}
-
-.selection-parameters:active {
-  background-color: #ffffff;/*!!!!!!!!!!*/
-}
-
 .filter .radio + label,
 .filter .checkbox + label {
   cursor: pointer;
@@ -640,7 +678,7 @@ h1 {
 
 .radio:not(checked) + label {
   position: relative;
-  padding: 0 0 0 35px;
+  padding: 0 0 0 39px;
 }
 
 .radio:not(checked) + label::before {
@@ -652,40 +690,22 @@ h1 {
   height: 23px;
   box-sizing: border-box;
 
+  background-color: #aabcb2;
+  box-shadow:
+    inset 0px 0px 0 4px rgb(170, 188, 178);
   border-radius: 50%;
-  border: 4px solid;
-  border-color: rgba(255, 255, 255, 0.6);
+  border: 4px solid #eef2ef;;
 }
 
-.radio:not(checked) + label::after {
-  content: "";
-  position: absolute;
-  right: 63px;
-  top: 5px;
-  width: 8px;
-  height: 8px;
-
-  border-radius: 50%;
-  background-color: transparent;
+.radio:checked + label::before {
+  background-color: #eef2ef;
 }
 
-.radio:checked + label::after {
-  background-color: rgba(255, 255, 255, 0.6);
-}
-
-.radio:first-child + label::after {
-  right: 32px;
-}
-
-.radio:last-of-type + label::after {
-  left: 15px;
-}
-
-.radio:hover + label::before {
+.radio:not(checked):hover + label::before {
   border-color: #ffffff;
 }
 
-.radio:checked:hover + label::after {
+.radio:checked:hover + label::before {
   background-color: #ffffff;
 }
 
@@ -780,6 +800,10 @@ h1 {
   font-weight: 500;
 }
 
+.inner-page .item-container {
+  height: 53px;
+}
+
 .item-container {
   margin-top: 14px;
 }
@@ -830,12 +854,12 @@ h1 {
   cursor: pointer;
 }
 
-.item p:hover,
-.item p:focus {
+.item-button-container a:hover,
+.item-button-container a:focus {
   background-color: #f38266;
 }
 
-.item p:active {
+.item-button-container a:active {
   background-color: #db5238;
   box-shadow: inset 0px 2px 2px #942718 ;
 }
@@ -905,7 +929,8 @@ h1 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 34px;
+  margin-top: 25px;
+  padding-bottom: 30px;
 }
 
 .footer-social {
@@ -974,11 +999,12 @@ h1 {
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.info a::before {
+.info ul::before {
   content: "";
 
   position: absolute;
-  display: none;
+  left: -18px;
+  top: 1px;
   width: 17px;
   height: 14px;
 
@@ -986,61 +1012,24 @@ h1 {
   background-repeat: no-repeat;
 }
 
-.partners::before {
-  top: 3px;
-  left: -20px;
-}
-
-.documents::before {
-  top: 3px;
-  right: 185px;
-}
-
-.factory::before {
-  bottom: -1px;
-  left: -20px;
-}
-
-.eco-standarts::before {
-  bottom: -1px;
-  right: 185px;
-}
-
 .info {
   position: relative;
   width: 330px;
 }
 
-.info svg {
-  position: absolute;
-  left: -22px;
-
+.info li:first-child a {
+  font-weight: bold;
 }
 
 .info a:hover {
-  font-weight: 700;
-}
-
-.info li:hover a::before {
-  display: block;
+  color: #ffbc9e;
+  border-bottom: 1px solid rgba(255, 188, 158, 0.3);
 }
 
 .footer-copyright {
   position: relative;
   align-self: flex-end;
   width: 267px;
-}
-
-.footer-copyright::before {
-  content: "";
-
-  position: absolute;
-  bottom: 15px;
-  width: 108px;
-  height: 40px;
-
-  background-image: url("../img/logo-htmlacademy.svg");
-  background-repeat: no-repeat;
 }
 
 .footer-copyright a,
@@ -1052,9 +1041,14 @@ h1 {
   font-weight: 400;
 }
 
-.footer-copyright a {
+.footer-copyright p > a {
   text-decoration: none;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.footer-copyright p > a:hover {
+  color: #ffbc9e;
+  border-bottom: 1px solid rgba(255, 188, 158, 0.3);
 }
 
 .modal-login {
@@ -1100,7 +1094,7 @@ h1 {
 .login-form input[type="email"]:focus,
 .login-form input[type="password"]:hover,
 .login-form input[type="password"]:focus {
-  border: 2px solid #d3d3d2;
+  box-shadow: 0px 0px 0 1px #d3d3d2;
 }
 
 .help {
@@ -1116,13 +1110,14 @@ h1 {
   font-size: 13px;
   line-height: 24px;
   background-color: inherit;
-  text-decoration: underline;
+  border-bottom: 1px solid rgba(50, 50, 50, 0.5);
 }
 
 .help a:hover,
 .help a:focus,
 .help a:active  {
   color: #e84d37;
+  border-bottom: 1px solid rgba(232, 77, 55, 0.5);
   background: none;
 }
 
@@ -1172,6 +1167,7 @@ h1 {
 
 .cart-table {
   position: absolute;
+  z-index: 10;
   display: none;
   top: 35px;
   right: 10px;
@@ -1186,34 +1182,30 @@ h1 {
   display: block;
 }
 
-.cart-link-header::after {
+.inner-page .cart-link-header::after {
   content: "";
   position: absolute;
   right: 7px;
   bottom: -5px;
-  width: 540px;
+  width: 120px;
   height: 5px;
 }
 
 .cart-table .button {
-  padding: 14px;
-  margin-left: 380px;
+  padding: 14px 25px;
+  margin-left: 350px;
   margin-bottom: 16px;
 }
 
 .user-cart {
-  padding: 10px 10px 0px;
-  box-sizing: border-box;
+  border-spacing: 5px;
+  padding: 15px 15px 0 15px;
 }
 
 .user-cart tr {
   display: table-row;
   height: 47px;
   padding: 6px;
-  vertical-align: middle;
-}
-
-.user-cart tr:first-child + tr {
   vertical-align: top;
 }
 
@@ -1223,36 +1215,54 @@ h1 {
   font-weight: 400;
 }
 
-.user-cart td:first-child {
-  vertical-align: middle;
+.user-cart td:nth-child(2) {
+  position: relative;
+  bottom: 6px;
 }
 
 .user-cart td:nth-child(3) {
-  width: 225px;
   text-align: left;
+  width: 216px;
 }
 
 .user-cart td:nth-child(4) {
-  width: 152px;
+  padding: 0 20px;
 }
 
 .user-cart tr:last-child td {
+  height: 20px;
+  vertical-align: middle;
   text-align: end;
   border-top: 1px solid rgba(50, 50, 50, 0.2);
 }
 
+.user-cart button::before,
+.user-cart button::after {
+  content: "";
+
+  position: absolute;
+  left: 5px;
+  width: 19px;
+  height: 1.25px;
+
+  background-color: #323232;
+}
+
+.user-cart button::before {
+  transform: rotate(45deg);
+}
+
+.user-cart button::after {
+  transform: rotate(-45deg);
+}
+
 .user-cart button {
-  width: 24px;
-  height: 56px;
-  padding-bottom: 15px;
+  width: 27px;
+  position: relative;
 
   cursor: pointer;
   border: none;
   background-color: #f8f7f4;
-}
-
-.user-cart button img {
-  margin-right: 10px;
 }
 
 .user-cart .round {
@@ -1484,7 +1494,7 @@ h1 {
 }
 
 .mailing input[type="email"]{
-  padding: 13px 160px 13px 13px;
+  padding: 13px 145px 13px 13px;
 
   color: #999999;
   font-size: 16px;
@@ -1496,11 +1506,12 @@ h1 {
 
 .mailing input[type="email"]:hover,
 .mailing input[type="email"]:focus {
-  border: 2px solid #d3d3d2;
+ box-shadow: 0px 0px 0 1px #d3d3d2;
 }
 
 .mailing .button {
   padding: 12px 20px;
+  margin-left: 10px;
 }
 
 .map-container {
@@ -1526,8 +1537,8 @@ h1 {
 
 }
 
-.contacts h2,
-.contacts p {
+.contacts-container h2,
+.contacts-container p {
   margin: 0;
   padding: 0;
   font-size: 14px;
@@ -1555,12 +1566,27 @@ h1 {
   margin-top: 23px;
 }
 
+.write-to-us-container {
+  position: fixed;
+  display: none;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+}
+
+.overlay-show {
+  display: block;
+}
+
 .write-to-us {
   position: absolute;
-  display: none;
-  top: 43%;
-  left: 33%;
+  top: 50%;
+  left: 50%;
   width: 433px;
+  margin-left: -235px;
   padding: 19px;
 
   background-color: #f8f7f4;
@@ -1571,10 +1597,10 @@ h1 {
   margin: 0 0 11px 0;
 }
 
-.write-to-us button:not(.button) {
+.modal-close {
   position: absolute;
-  top: 5px;
-  right: 5px;
+  top: 15px;
+  right: 15px;
   width: 20px;
   height: 20px;
 
@@ -1582,6 +1608,7 @@ h1 {
   background-image: url("../img/cross-big.svg");
   background-repeat: no-repeat;
   border: none;
+  cursor: pointer;
 }
 
 .write-to-us .button {
@@ -1608,7 +1635,7 @@ h1 {
 .answer-us-form input[type="email"]:focus,
 .answer-us-form input[type="text"]:hover,
 .answer-us-form input[type="text"]:focus {
-  border: 2px solid #d3d3d2;
+  box-shadow: 0px 0px 0 1px #d3d3d2;
 }
 
 textarea {
@@ -1630,6 +1657,6 @@ textarea {
 
 textarea:hover,
 textarea:focus {
-  border: 2px solid #d3d3d2;
+  box-shadow: 0px 0px 0 1px #d3d3d2;
 }
 
