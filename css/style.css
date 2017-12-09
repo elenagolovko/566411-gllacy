@@ -113,32 +113,32 @@ body {
   letter-spacing: 1px;
 }
 
-#product-1:checked ~ .background-wrapper {
+.product-1:checked ~ .background-wrapper {
   background-color: #849d8f;
   background-image: url("../img/background-index1.png");
 }
 
 
-#product-2:checked ~ .background-wrapper {
+.product-2:checked ~ .background-wrapper {
   background-color: #8996a6;
   background-image: url("../img/background-index2.png");
 }
 
-#product-3:checked ~ .background-wrapper {
+.product-3:checked ~ .background-wrapper {
   background-color: #9d8b84;
   background-image: url("../img/background-index3.png");
 }
 
 
-#product-1:checked ~ .background-wrapper #index-1,
-#product-2:checked ~ .background-wrapper #index-2,
-#product-3:checked ~ .background-wrapper #index-3 {
+.product-1:checked ~ .background-wrapper #index-1,
+.product-2:checked ~ .background-wrapper #index-2,
+.product-3:checked ~ .background-wrapper #index-3 {
   display: block;
 }
 
-#product-1:checked ~ .background-wrapper label[for="product-1"],
-#product-2:checked ~ .background-wrapper label[for="product-2"],
-#product-3:checked ~ .background-wrapper label[for="product-3"] {
+.product-1:checked ~ .background-wrapper label[for="product-1"],
+.product-2:checked ~ .background-wrapper label[for="product-2"],
+.product-3:checked ~ .background-wrapper label[for="product-3"] {
   background-color: #ffffff;
 }
 
