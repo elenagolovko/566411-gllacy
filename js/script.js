@@ -11,6 +11,7 @@ var form = popup.querySelector("form");
 link.addEventListener("click", function (evt) {
   evt.preventDefault();
   popup.classList.add("overlay-show");
+  modal.classList.add("modal-bounce");
   login.focus();
 });
 
