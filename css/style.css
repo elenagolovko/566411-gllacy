@@ -14,7 +14,7 @@ body {
 }
 
 .background-wrapper {
-  min-width: 940px;
+  min-width: 1200px;
   background-image: url("../img/background-index1.png");
   background-repeat: no-repeat;
   background-color: #849d8f;
@@ -90,7 +90,7 @@ body {
 .slide-title {
   width: 700px;
   margin: 0 auto;
-  margin-bottom: 27px;
+  margin-bottom: 30px;
 
   font-size: 60px;
   letter-spacing: 0.2px;
@@ -902,8 +902,8 @@ h1 {
 
 .bestsellers-wrap,
 .catalog-list-wrapper {
-  width: 1174px;
-  margin: 24px auto;
+  width: 1188px;
+  margin: 27px auto;
 }
 
 .item::before {
@@ -1146,12 +1146,12 @@ h1 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-top: 24px;
+  margin-top: 22px;
   padding-bottom: 30px;
 }
 
 .footer-social {
-  width: 287px;
+  width: 209px;
 }
 
 .footer-social  a {
@@ -1255,13 +1255,12 @@ h1 {
   position: relative;
   -ms-flex-item-align: end;
       align-self: flex-end;
-  width: 267px;
+  width: 190px;
 }
 
 .footer-copyright > a,
 .footer-copyright p {
   position: relative;
-  left: 80px;
   top: -8px;
   margin: 0;
   color: #ffffff;
@@ -1553,7 +1552,7 @@ h1 {
       -ms-flex-pack: justify;
           justify-content: space-between;
   margin: 0;
-  margin-top: 32px;
+  margin-top: 33px;
   padding: 0;
 
   list-style: none;
@@ -1562,7 +1561,7 @@ h1 {
 
 .advertisement h2 {
   margin: 0;
-  margin-bottom: 15px;
+  margin-bottom: 14px;
 
   color: #ffffff;
   font-size: 35px;
@@ -1572,7 +1571,7 @@ h1 {
 
 .advertisement p {
   margin: 0;
-  padding-left: 3px;
+  padding-left: 2px;
   font-size: 18px;
   font-weight: 700;
   line-height: 22px;
@@ -1580,7 +1579,7 @@ h1 {
 
 .raspberry {
   width: 560px;
-  padding: 17px 17px;
+  padding: 15px 17px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 
@@ -1593,12 +1592,13 @@ h1 {
   padding: 12px 22px;
   margin-left: 358px;
   margin-top: 44px;
+  margin-bottom: 8px;
   font-size: 18px;
 }
 
 .chocolate {
   width: 560px;
-  padding: 17px 17px;
+  padding: 15px 19px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 
@@ -1609,7 +1609,7 @@ h1 {
 
 .chocolate .button {
   padding: 12px 22px;
-  margin-left: 333px;
+  margin-left: 331px;
   margin-top: 44px;
   font-size: 18px;
 }
@@ -1652,7 +1652,7 @@ h1 {
 .features h2 {
   display: inline-block;
   vertical-align: baseline;
-  margin: 27px 0 22px 20px;
+  margin: 27px 0 20px 20px;
   color: #323232;
   font-size: 24px;
   word-spacing: 2px;
@@ -1664,8 +1664,8 @@ h1 {
   content: "";
 
   position: absolute;
-  top: -12px;
-  left: 19px;
+  top: -14px;
+  left: 21px;
   width: 50px;
   height: 50px;
 
@@ -1677,7 +1677,7 @@ h1 {
   content: "";
 
   position: absolute;
-  top: -12px;
+  top: -14px;
   right: 512px;
   width: 50px;
   height: 50px;
@@ -1690,8 +1690,8 @@ h1 {
   content: "";
 
   position: absolute;
-  left: 20px;
-  bottom: 76px;
+  left: 21px;
+  bottom: 72px;
   width: 50px;
   height: 50px;
 
@@ -1703,8 +1703,8 @@ h1 {
   content: "";
 
   position: absolute;
-  right: 512px;
-  bottom: 76px;
+  right: 510px;
+  bottom: 72px;
   width: 50px;
   height: 50px;
 
@@ -1784,7 +1784,7 @@ h1 {
 
 .mailing p {
   margin: 0;
-  margin-bottom: 35px;
+  margin-bottom: 37px;
   line-height: 22px;
 }
 
@@ -1813,7 +1813,7 @@ h1 {
 
 .mailing .button {
   padding: 11px 19px;
-  margin-left: 11px;
+  margin-left: 6px;
 }
 
 .contacts::before {
@@ -1842,16 +1842,16 @@ h1 {
 
 .contacts {
   position: relative;
-  width: 1210px;
+  width: 1200px;
   margin: 0 auto;
 }
 
 .contacts-container {
   position: absolute;
   z-index: 30;
-  bottom: 62px;
-  right: 35px;
-  padding: 25px 25px;
+  bottom: 44px;
+  right: 27px;
+  padding: 25px 27px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 
@@ -1878,7 +1878,7 @@ h1 {
 .contacts b {
   display: inline-block;
   vertical-align: baseline;
-  margin-bottom: 19px;
+  margin-bottom: 23px;
   margin-right: 10px;
   margin-top: 2px;
 
@@ -1899,9 +1899,9 @@ h1 {
 }
 
 .contacts-container .button {
-  padding: 10px 33px;
-  margin-top: 25px;
-  margin-bottom: 13px;
+  padding: 10px 30px;
+  margin-top: 24px;
+  margin-bottom: 31px;
   font-size: 17px;
 }
 
