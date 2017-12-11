@@ -623,7 +623,7 @@ h1 {
       -ms-flex-align: end;
           align-items: flex-end;
   margin-top: 30px;
-  width: 875px;
+  width: 858px;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
@@ -631,7 +631,7 @@ h1 {
 .filter fieldset {
   padding: 0;
   margin: 0;
-  margin-right: 14px;
+  /*margin-right: 14px;*/
   border: none;
 }
 
@@ -650,7 +650,7 @@ h1 {
 
 .filter-mask,
 .selection-parameters {
-  padding: 10px;
+  padding: 12px 0 10px;
   border-radius: 60px;
 
   color: #ffffff;
@@ -679,7 +679,7 @@ h1 {
   content: "";
 
   position: absolute;
-  bottom: 90px;
+  bottom: 92px;
   left: 166px;
   width: 0px;
   height: 0px;
@@ -705,7 +705,8 @@ h1 {
 
 .filter button {
   padding: 8px 27px;
-  margin-right: 20px;
+  margin-right: 2px;
+  margin-bottom: 4px;
 
   border: none;
   -webkit-box-shadow: 0px 0px 0 2px #ffffff;
@@ -791,8 +792,16 @@ h1 {
 }
 
 .radio-box {
-  padding-left: 10px;
-  padding-right: 20px;
+ /* padding-left: 10px;
+  padding-right: 20px;*/
+}
+
+.radio-box label:first-of-type {
+  padding-left: 44px;
+}
+
+.radio-box label:last-of-type {
+  padding-right: 18px;
 }
 
 .filter .radio + label {
@@ -801,18 +810,22 @@ h1 {
 
 .filter .checkbox + label {
   cursor: pointer;
-  margin-left: 15px;
+  /*margin-left: 15px;*/
 }
 
 .radio:not(checked) + label {
   position: relative;
-  padding: 0 11px 0 32px;
+  /*padding: 0 11px 0 32px;*/
+}
+
+.radio:not(:first-child) + label {
+  padding-left: 46px;
 }
 
 .radio:not(checked) + label::before {
   content: "";
   position: absolute;
-  left: 1px;
+  left: 13px;
   top: -1px;
   width: 23px;
   height: 23px;
@@ -842,14 +855,26 @@ h1 {
 
 .checkbox:not(checked) + label {
   position: relative;
-  padding: 0 12px 0 22px;
+  /*padding: 0 12px 0 22px;*/
+}
+
+.checkbox-box label:first-of-type {
+  padding-left: 48px;
+}
+
+.checkbox-box label:last-of-type {
+  padding-right: 20px;
+}
+
+.checkbox:not(:first-child) + label {
+  padding-left: 50px;
 }
 
 .checkbox:not(checked) + label::before {
   content: "";
   position: absolute;
   top: -1px;
-  left: -9px;
+  left: 10%;
   width: 23px;
   height: 23px;
 
@@ -862,7 +887,7 @@ h1 {
   content: "";
   position: absolute;
   top: -1px;
-  left: -9px;
+  left: 10%;
   width: 27px;
   height: 23px;
 
@@ -1078,8 +1103,8 @@ h1 {
 }
 
 .pagination {
-  margin-top: 51px;
-  padding-bottom: 34px;
+  margin-top: 47px;
+  padding-bottom: 33px;
 
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
@@ -1146,8 +1171,12 @@ h1 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-top: 22px;
+  margin-top: 18px;
   padding-bottom: 30px;
+}
+
+.inner-page .footer-container {
+  margin-top: 26px;
 }
 
 .footer-social {
