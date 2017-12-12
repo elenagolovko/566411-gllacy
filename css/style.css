@@ -66,7 +66,7 @@ body {
 .slider {
   position: relative;
 
-  padding-top: 321px;
+  padding-top: 319px;
 
   text-align: center;
   color: #ffffff;
@@ -166,11 +166,11 @@ body {
 }
 
 .logo {
-  margin-top: 2px;
+  margin-top: 4px;
 }
 
 .main-navigation {
-  padding-top: 6px;
+  padding-top: 5px;
 }
 
  .main-navigation,
@@ -201,6 +201,7 @@ body {
       -ms-flex-align: baseline;
           align-items: baseline;
   margin: 0;
+  margin-top: -5px;
   padding: 0;
   list-style: none;
 }
@@ -339,7 +340,7 @@ body {
       -ms-flex-pack: end;
           justify-content: flex-end;
   margin: 0;
-  padding: 0 0 3px 0;
+  padding: 0 0 4px 0;
   list-style: none;
 }
 
@@ -459,7 +460,6 @@ body {
   display: inline-block;
   vertical-align: baseline;
   text-align: center;
-  margin-left: 9px;
   border-radius: 60px;
 
   background-color: rgba(255, 255, 255, 0.2);
@@ -470,6 +470,7 @@ body {
   padding-right: 15px;
   padding-top: 4px;
   padding-bottom: 4px;
+  margin-left: 9px;
 }
 
 .cart-link-header {
@@ -477,6 +478,7 @@ body {
   padding-left: 17px;
   padding-top: 5px;
   padding-bottom: 6px;
+  margin-left: 11px;
 }
 
 .inner-page .cart-link-header {
@@ -500,7 +502,7 @@ body {
 .login-link svg {
   display: inline-block;
   vertical-align: middle;
-  padding: 0 0 3px 3px;
+  padding: 1px 0 3px 3px;
   margin-right: 8px;
 }
 
@@ -536,7 +538,7 @@ body {
 }
 
 .header-contacts p {
-  margin: -4px 0 4px 17px;
+  margin: -4px 0 5px 17px;
 
   color: #ffffff;
   font-size: 14px;
@@ -601,7 +603,7 @@ body {
 
 h1 {
   margin: 0;
-  margin-top: 2px;
+  margin-top: 3px;
   color: #ffffff;
   font-size: 35px;
   line-height: 41px;
@@ -622,7 +624,7 @@ h1 {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
-  margin-top: 30px;
+  margin-top: 27px;
   width: 858px;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
@@ -640,8 +642,10 @@ h1 {
 }
 
 .filter legend {
-  margin-left: 15px;
-  margin-bottom: 2px;
+  position: relative;
+  left: 15px;
+  top: -3px;
+  margin-bottom: 4px;
   color: #ffffff;
   font-size: 14px;
   line-height: 16px;
@@ -650,7 +654,6 @@ h1 {
 
 .filter-mask,
 .selection-parameters {
-  padding: 12px 0 10px;
   border-radius: 60px;
 
   color: #ffffff;
@@ -660,10 +663,16 @@ h1 {
   border: none;
 }
 
+.filter-mask {
+  padding: 10px 0 10px;
+}
+
 .selection-parameters {
   width: 192px;
   padding-right: 32px;
   padding-left: 17px;
+  padding-top: 8px;
+  padding-bottom: 8px;
 
   outline: none;
   -webkit-appearance: none;
@@ -679,7 +688,7 @@ h1 {
   content: "";
 
   position: absolute;
-  bottom: 92px;
+  bottom: 89px;
   left: 166px;
   width: 0px;
   height: 0px;
@@ -706,7 +715,7 @@ h1 {
 .filter button {
   padding: 8px 27px;
   margin-right: 2px;
-  margin-bottom: 4px;
+  margin-bottom: 1px;
 
   border: none;
   -webkit-box-shadow: 0px 0px 0 2px #ffffff;
@@ -808,6 +817,10 @@ h1 {
   cursor: pointer;
 }
 
+/*.checkbox-box {
+  padding: 7px 0 9px;
+}*/
+
 .filter .checkbox + label {
   cursor: pointer;
   /*margin-left: 15px;*/
@@ -862,6 +875,18 @@ h1 {
   padding-left: 48px;
 }
 
+.checkbox-box label:first-of-type::before {
+  left: 12%;
+}
+
+.checkbox-box label:nth-of-type(2)::before {
+  left: 9%;
+}
+
+.checkbox-box label::before {
+  left: 17%;
+}
+
 .checkbox-box label:last-of-type {
   padding-right: 20px;
 }
@@ -873,27 +898,25 @@ h1 {
 .checkbox:not(checked) + label::before {
   content: "";
   position: absolute;
-  top: -1px;
-  left: 10%;
-  width: 23px;
-  height: 23px;
+  top: 1px;
+  width: 100%;
+  height: 100%;
 
   background-image: url("../img/checkbox-off.svg");
   opacity: 0.8;
   background-repeat: no-repeat;
+  background-size: contain;
 }
 
 .checkbox:checked + label::before {
   content: "";
   position: absolute;
-  top: -1px;
-  left: 10%;
-  width: 27px;
-  height: 23px;
+  top: 1px;
 
   background-image: url("../img/checkbox-on.svg");
   opacity: 0.8;
   background-repeat: no-repeat;
+  background-size: contain;
 }
 
 .checkbox:hover + label::before {
@@ -928,7 +951,7 @@ h1 {
 .bestsellers-wrap,
 .catalog-list-wrapper {
   width: 1188px;
-  margin: 27px auto;
+  margin: 24px auto;
 }
 
 .item::before {
@@ -950,7 +973,7 @@ h1 {
 }
 
 .inner-page .item {
-  margin-bottom: 23px;
+  margin-bottom: 19px;
 }
 
 .item article {
@@ -986,6 +1009,7 @@ h1 {
   background-repeat: repeat-x;
   font-size: 16px;
   font-weight: 500;
+  line-height: 22px;
 }
 
 .item-link h3 {
@@ -1068,7 +1092,7 @@ h1 {
   position: relative;
   display: inline-block;
   vertical-align: baseline;
-  margin-left: -120px;
+  margin-left: -123px;
 }
 
 .item .price {
@@ -1103,7 +1127,7 @@ h1 {
 }
 
 .pagination {
-  margin-top: 47px;
+  margin-top: 49px;
   padding-bottom: 33px;
 
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
@@ -1171,7 +1195,7 @@ h1 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-top: 18px;
+  margin-top: 22px;
   padding-bottom: 30px;
 }
 
@@ -1194,6 +1218,7 @@ h1 {
   display: -ms-flexbox;
   display: flex;
   margin: 0;
+  margin-left: 2px;
   padding: 0;
   list-style: none;
 }
@@ -1205,7 +1230,7 @@ h1 {
   height: 32px;
   border: 2px solid rgba(255, 255, 255, 0.25);
   border-radius: 230px;
-  margin-right: 14px;
+  margin-right: 13px;
 }
 
  .social:hover g,
@@ -1244,7 +1269,8 @@ h1 {
   vertical-align: baseline;
   text-align: left;
   min-width: 140px;
-  margin-bottom: 4px;
+  margin-bottom: 5px;
+  margin-right: 1px;
 }
 
 .info a {
@@ -1291,6 +1317,7 @@ h1 {
 .footer-copyright p {
   position: relative;
   top: -8px;
+  left: 2px;
   margin: 0;
   color: #ffffff;
   font-size: 12px;
@@ -1645,7 +1672,8 @@ h1 {
 
 .features {
   background-image: url("../img/background-feature.png");
-  border-radius: 10px;
+  padding-bottom: 3px;
+  border-radius: 16px;
 }
 
 .features ul {
@@ -1681,19 +1709,20 @@ h1 {
 .features h2 {
   display: inline-block;
   vertical-align: baseline;
-  margin: 27px 0 20px 20px;
+  margin: 26px 0 20px 19px;
   color: #323232;
   font-size: 24px;
-  word-spacing: 2px;
   font-weight: 500;
   line-height: 30px;
+  word-spacing: -0.01em;
+  letter-spacing: 0.2px;
 }
 
 .ice-cream::before {
   content: "";
 
   position: absolute;
-  top: -14px;
+  top: -11px;
   left: 21px;
   width: 50px;
   height: 50px;
@@ -1706,8 +1735,8 @@ h1 {
   content: "";
 
   position: absolute;
-  top: -14px;
-  right: 512px;
+  top: -11px;
+  right: 511px;
   width: 50px;
   height: 50px;
 
@@ -1719,7 +1748,7 @@ h1 {
   content: "";
 
   position: absolute;
-  left: 21px;
+  left: 20px;
   bottom: 72px;
   width: 50px;
   height: 50px;
@@ -1732,7 +1761,7 @@ h1 {
   content: "";
 
   position: absolute;
-  right: 510px;
+  right: 511px;
   bottom: 72px;
   width: 50px;
   height: 50px;
@@ -1752,7 +1781,7 @@ h1 {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin-top: 42px;
+  margin-top: 40px;
   margin-bottom: 41px;
 }
 
@@ -1764,7 +1793,7 @@ h1 {
           box-sizing: border-box;
 
   background-image: url("../img/background-strawberry.jpg");
-  border-radius: 10px;
+  border-radius: 15px;
   background-position: 17% 40%;
   background-repeat: no-repeat;
 }
@@ -1818,7 +1847,8 @@ h1 {
 }
 
 .mailing input[type="email"] {
-  padding: 9px 156px 9px 12px;
+  padding: 9px 0 9px 12px;
+  width: 69%;
 
   color: #999999;
   font-size: 16px;
@@ -1841,8 +1871,8 @@ h1 {
 }
 
 .mailing .button {
-  padding: 11px 19px;
-  margin-left: 6px;
+  padding: 9px 20px;
+  margin-left: 11px;
 }
 
 .contacts::before {
@@ -1878,9 +1908,9 @@ h1 {
 .contacts-container {
   position: absolute;
   z-index: 30;
-  bottom: 44px;
-  right: 27px;
-  padding: 25px 27px;
+  bottom: 66px;
+  right: 25px;
+  padding: 30px 27px 0 27px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 
@@ -1901,15 +1931,13 @@ h1 {
 
 .contacts-container h2 {
   padding-right: 97px;
-  padding-top: 4px;
 }
 
 .contacts b {
   display: inline-block;
   vertical-align: baseline;
-  margin-bottom: 23px;
+  margin-bottom: 19px;
   margin-right: 10px;
-  margin-top: 2px;
 
   font-size: 18px;
   line-height: 24px;
@@ -1922,16 +1950,22 @@ h1 {
 }
 
 .number {
+  display: inline-block;
+  vertical-align: baseline;
   margin-right: 66px;
+  margin-top: 4px;
+  margin-bottom: 2px;
   color: #323232;
   text-decoration: none;
 }
 
 .contacts-container .button {
-  padding: 10px 30px;
-  margin-top: 24px;
-  margin-bottom: 31px;
+  padding: 9px 27px 11px 29px;
+  margin-top: 25px;
+  margin-bottom: 32px;
   font-size: 17px;
+  letter-spacing: 0.6px;
+  word-spacing: -0.1em;
 }
 
 @-webkit-keyframes bounce {
