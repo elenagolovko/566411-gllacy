@@ -170,7 +170,7 @@ body {
 }
 
 .main-navigation {
-  padding-top: 5px;
+  padding-top: 6px;
 }
 
  .main-navigation,
@@ -259,7 +259,7 @@ body {
   position: absolute;
   z-index: 10;
   left: -15px;
-  top: 33px;
+  top: 31px;
   width: 143px;
   padding-top: 6px;
   visibility: hidden;
@@ -340,7 +340,7 @@ body {
       -ms-flex-pack: end;
           justify-content: flex-end;
   margin: 0;
-  padding: 0 0 4px 0;
+  padding: 0 0 5px 0;
   list-style: none;
 }
 
@@ -466,11 +466,11 @@ body {
 }
 
 .login-link-header {
-  padding-left: 14px;
-  padding-right: 15px;
+  padding-left: 12px;
+  padding-right: 16px;
   padding-top: 4px;
   padding-bottom: 4px;
-  margin-left: 9px;
+  margin-left: 10px;
 }
 
 .cart-link-header {
@@ -478,7 +478,7 @@ body {
   padding-left: 17px;
   padding-top: 5px;
   padding-bottom: 6px;
-  margin-left: 11px;
+  margin-left: 9px;
 }
 
 .inner-page .cart-link-header {
@@ -538,7 +538,7 @@ body {
 }
 
 .header-contacts p {
-  margin: -4px 0 5px 17px;
+  margin: -5px 0 4px 17px;
 
   color: #ffffff;
   font-size: 14px;
@@ -566,7 +566,7 @@ body {
 }
 
 .filter-wrapper {
-  margin-top: 21px;
+  margin-top: 19px;
 }
 
 .breadcrumbs {
@@ -581,10 +581,13 @@ body {
 .breadcrumbs a {
   color: #ffffff;
   text-decoration: none;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   font-size: 14px;
   font-weight: 400;
   line-height: 16px;
+}
+
+.breadcrumbs a[href] {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .breadcrumbs a[href]:hover,
@@ -603,7 +606,7 @@ body {
 
 h1 {
   margin: 0;
-  margin-top: 3px;
+  margin-top: 4px;
   color: #ffffff;
   font-size: 35px;
   line-height: 41px;
@@ -624,7 +627,7 @@ h1 {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
-  margin-top: 27px;
+  margin-top: 29px;
   width: 858px;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
@@ -670,7 +673,7 @@ h1 {
 .selection-parameters {
   width: 192px;
   padding-right: 32px;
-  padding-left: 17px;
+  padding-left: 14px;
   padding-top: 8px;
   padding-bottom: 8px;
 
@@ -713,8 +716,8 @@ h1 {
 }
 
 .filter button {
-  padding: 8px 27px;
-  margin-right: 2px;
+  padding: 7px 28px;
+  margin-right: 0px;
   margin-bottom: 1px;
 
   border: none;
@@ -745,7 +748,8 @@ h1 {
 .filter-range {
   padding-right: 13px;
   padding-left: 13px;
-  width: 188px;
+  padding-top: 8px;
+  width: 191px;
 }
 
 .range-controls {
@@ -791,18 +795,17 @@ h1 {
 }
 
 .range-toggle-min {
-  top: -2px;
+  top: -1px;
   left: 20px;
 }
 
 .range-toggle-max {
-  top: -2px;
-  right: 50px;
+  top: -1px;
+  right: 52px;
 }
 
 .radio-box {
- /* padding-left: 10px;
-  padding-right: 20px;*/
+ padding-top: 8px;
 }
 
 .radio-box label:first-of-type {
@@ -866,6 +869,11 @@ h1 {
   background-color: #ffffff;
 }
 
+.checkbox-box {
+  padding-bottom: 8px;
+  padding-top: 9px;
+}
+
 .checkbox:not(checked) + label {
   position: relative;
   /*padding: 0 12px 0 22px;*/
@@ -898,7 +906,7 @@ h1 {
 .checkbox:not(checked) + label::before {
   content: "";
   position: absolute;
-  top: 1px;
+  top: 0px;
   width: 100%;
   height: 100%;
 
@@ -911,7 +919,7 @@ h1 {
 .checkbox:checked + label::before {
   content: "";
   position: absolute;
-  top: 1px;
+  top: 0px;
 
   background-image: url("../img/checkbox-on.svg");
   opacity: 0.8;
@@ -973,7 +981,7 @@ h1 {
 }
 
 .inner-page .item {
-  margin-bottom: 19px;
+  margin-bottom: 20px;
 }
 
 .item article {
@@ -1029,7 +1037,7 @@ h1 {
 
 .item-container {
   width: 258px;
-  margin-top: 23px;
+  margin-top: 22px;
   margin-left: 5px;
 }
 
@@ -1090,9 +1098,10 @@ h1 {
 
 .item .price-and-weight {
   position: relative;
+  top: 0px;
   display: inline-block;
   vertical-align: baseline;
-  margin-left: -123px;
+  margin-left: -121px;
 }
 
 .item .price {
@@ -1127,7 +1136,7 @@ h1 {
 }
 
 .pagination {
-  margin-top: 49px;
+  margin-top: 51px;
   padding-bottom: 33px;
 
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
@@ -1147,6 +1156,10 @@ h1 {
   list-style: none;
 }
 
+.prev {
+  margin-right: 4px;
+}
+
 .prev svg {
   -webkit-transform: rotate(180deg);
       -ms-transform: rotate(180deg);
@@ -1164,6 +1177,7 @@ h1 {
 
 .next {
   padding-left: 5px;
+  padding-right: 1px;
 }
 
 .pagination-item a[href]:hover,
@@ -1316,7 +1330,7 @@ h1 {
 .footer-copyright > a,
 .footer-copyright p {
   position: relative;
-  top: -8px;
+  top: -7px;
   left: 2px;
   margin: 0;
   color: #ffffff;
@@ -1782,7 +1796,7 @@ h1 {
       -ms-flex-pack: justify;
           justify-content: space-between;
   margin-top: 40px;
-  margin-bottom: 41px;
+  margin-bottom: 38px;
 }
 
 .blog {
